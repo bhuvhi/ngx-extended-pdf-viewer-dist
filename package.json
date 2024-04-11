@@ -4,7 +4,7 @@
   "version": "19.7.2",
   "license": "Apache-2.0",
   "repository": {
-    "url": "git+https://github.com/bhuvhi/ngx-extended-pdf-viewer.git"
+    "url": "git+https://github.com/bhuvhi/ngx-extended-pdf-viewer"
   },
   "schematics": "./schematics/collection.json",
   "ng-add": {
