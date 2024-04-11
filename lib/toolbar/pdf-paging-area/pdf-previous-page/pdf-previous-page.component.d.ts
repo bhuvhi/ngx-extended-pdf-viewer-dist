@@ -11,5 +11,5 @@ export declare class PdfPreviousPageComponent {
     onPdfJsInit(): void;
     updateUIState(event: UpdateUIStateEvent): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<PdfPreviousPageComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<PdfPreviousPageComponent, "pdf-previous-page", never, {}, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<PdfPreviousPageComponent, "pdf-previous-page", never, {}, {}, never, never, false, never>;
 }

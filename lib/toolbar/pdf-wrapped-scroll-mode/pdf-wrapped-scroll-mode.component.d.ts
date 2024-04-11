@@ -14,5 +14,5 @@ export declare class PdfWrappedScrollModeComponent {
     constructor(notificationService: PDFNotificationService, ngZone: NgZone);
     onPdfJsInit(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<PdfWrappedScrollModeComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<PdfWrappedScrollModeComponent, "pdf-wrapped-scroll-mode", never, { "show": "show"; "scrollMode": "scrollMode"; "pageViewMode": "pageViewMode"; }, { "pageViewModeChange": "pageViewModeChange"; }, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<PdfWrappedScrollModeComponent, "pdf-wrapped-scroll-mode", never, { "show": { "alias": "show"; "required": false; }; "scrollMode": { "alias": "scrollMode"; "required": false; }; "pageViewMode": { "alias": "pageViewMode"; "required": false; }; }, { "pageViewModeChange": "pageViewModeChange"; }, never, never, false, never>;
 }

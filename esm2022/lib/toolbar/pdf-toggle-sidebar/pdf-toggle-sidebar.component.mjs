@@ -1,0 +1,40 @@
+import { Component, EventEmitter, Input, NgZone, Output } from '@angular/core';
+import * as i0 from "@angular/core";
+import * as i1 from "../pdf-shy-button/pdf-shy-button.component";
+import * as i2 from "../../responsive-visibility";
+export class PdfToggleSidebarComponent {
+    ngZone;
+    show = true;
+    sidebarVisible = false;
+    showChange = new EventEmitter();
+    onClick;
+    constructor(ngZone) {
+        this.ngZone = ngZone;
+        const emitter = this.showChange;
+        this.onClick = () => {
+            const PDFViewerApplication = window.PDFViewerApplication;
+            const newVisibility = !PDFViewerApplication.pdfSidebar.isOpen;
+            emitter.emit(newVisibility);
+            PDFViewerApplication.eventBus.dispatch('toggleSidebar', { visible: newVisibility });
+        };
+    }
+    /** @nocollapse */ static ɵfac = function PdfToggleSidebarComponent_Factory(t) { return new (t || PdfToggleSidebarComponent)(i0.ɵɵdirectiveInject(i0.NgZone)); };
+    /** @nocollapse */ static ɵcmp = /** @pureOrBreakMyCode */ i0.ɵɵdefineComponent({ type: PdfToggleSidebarComponent, selectors: [["pdf-toggle-sidebar"]], inputs: { show: "show", sidebarVisible: "sidebarVisible" }, outputs: { showChange: "showChange" }, decls: 2, vars: 8, consts: [["title", "Toggle Sidebar", "primaryToolbarId", "primarySidebarToggle", "l10nId", "pdfjs-toggle-sidebar-button", "l10nLabel", "pdfjs-toggle-sidebar-button-label", "image", "<svg width='24px' height='24px' viewBox='0 0 24 24'> <path fill='currentColor' d='M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z' /> </svg>", 3, "cssClass", "toggled", "order", "closeOnClick", "action"]], template: function PdfToggleSidebarComponent_Template(rf, ctx) { if (rf & 1) {
+            i0.ɵɵelement(0, "pdf-shy-button", 0);
+            i0.ɵɵpipe(1, "responsiveCSSClass");
+        } if (rf & 2) {
+            i0.ɵɵproperty("cssClass", i0.ɵɵpipeBind2(1, 5, ctx.show, "always-visible"))("toggled", ctx.sidebarVisible === true)("order", 4500)("closeOnClick", true)("action", ctx.onClick);
+        } }, dependencies: [i1.PdfShyButtonComponent, i2.ResponsiveCSSClassPipe], styles: ["[_nghost-%COMP%]:focus{outline:none}button[_ngcontent-%COMP%]:focus{outline:none}svg[_ngcontent-%COMP%]:focus{outline:none}button#sidebarToggle[_ngcontent-%COMP%]{height:24px;width:24px;margin-right:5px!important}button[_ngcontent-%COMP%]{padding:0}"] });
+}
+(() => { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(PdfToggleSidebarComponent, [{
+        type: Component,
+        args: [{ selector: 'pdf-toggle-sidebar', template: "<pdf-shy-button\r\n  title=\"Toggle Sidebar\"\r\n  primaryToolbarId=\"primarySidebarToggle\"\r\n  [cssClass]=\"show | responsiveCSSClass : 'always-visible'\"\r\n  [toggled]=\"sidebarVisible === true\"\r\n  l10nId=\"pdfjs-toggle-sidebar-button\"\r\n  l10nLabel=\"pdfjs-toggle-sidebar-button-label\"\r\n  [order]=\"4500\"\r\n  [closeOnClick]=\"true\"\r\n  [action]=\"onClick\"\r\n  image=\"<svg width='24px' height='24px' viewBox='0 0 24 24'> <path fill='currentColor' d='M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z' /> </svg>\"\r\n>\r\n</pdf-shy-button>\r\n", styles: [":host:focus{outline:none}button:focus{outline:none}svg:focus{outline:none}button#sidebarToggle{height:24px;width:24px;margin-right:5px!important}button{padding:0}\n"] }]
+    }], () => [{ type: i0.NgZone }], { show: [{
+            type: Input
+        }], sidebarVisible: [{
+            type: Input
+        }], showChange: [{
+            type: Output
+        }] }); })();
+(() => { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassDebugInfo(PdfToggleSidebarComponent, { className: "PdfToggleSidebarComponent", filePath: "lib\\toolbar\\pdf-toggle-sidebar\\pdf-toggle-sidebar.component.ts", lineNumber: 10 }); })();
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicGRmLXRvZ2dsZS1zaWRlYmFyLmNvbXBvbmVudC5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uLy4uLy4uL3Byb2plY3RzL25neC1leHRlbmRlZC1wZGYtdmlld2VyL3NyYy9saWIvdG9vbGJhci9wZGYtdG9nZ2xlLXNpZGViYXIvcGRmLXRvZ2dsZS1zaWRlYmFyLmNvbXBvbmVudC50cyIsIi4uLy4uLy4uLy4uLy4uLy4uL3Byb2plY3RzL25neC1leHRlbmRlZC1wZGYtdmlld2VyL3NyYy9saWIvdG9vbGJhci9wZGYtdG9nZ2xlLXNpZGViYXIvcGRmLXRvZ2dsZS1zaWRlYmFyLmNvbXBvbmVudC5odG1sIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLE9BQU8sRUFBRSxTQUFTLEVBQUUsWUFBWSxFQUFFLEtBQUssRUFBRSxNQUFNLEVBQUUsTUFBTSxFQUFFLE1BQU0sZUFBZSxDQUFDOzs7O0FBUy9FLE1BQU0sT0FBTyx5QkFBeUI7SUFZaEI7SUFWYixJQUFJLEdBQXlCLElBQUksQ0FBQztJQUdsQyxjQUFjLEdBQXdCLEtBQUssQ0FBQztJQUc1QyxVQUFVLEdBQUcsSUFBSSxZQUFZLEVBQVcsQ0FBQztJQUV6QyxPQUFPLENBQWE7SUFFM0IsWUFBb0IsTUFBYztRQUFkLFdBQU0sR0FBTixNQUFNLENBQVE7UUFDaEMsTUFBTSxPQUFPLEdBQUcsSUFBSSxDQUFDLFVBQVUsQ0FBQztRQUNoQyxJQUFJLENBQUMsT0FBTyxHQUFHLEdBQUcsRUFBRTtZQUNsQixNQUFNLG9CQUFvQixHQUEyQixNQUFjLENBQUMsb0JBQW9CLENBQUM7WUFDekYsTUFBTSxhQUFhLEdBQUcsQ0FBQyxvQkFBb0IsQ0FBQyxVQUFVLENBQUMsTUFBTSxDQUFDO1lBQzlELE9BQU8sQ0FBQyxJQUFJLENBQUMsYUFBYSxDQUFDLENBQUM7WUFDNUIsb0JBQW9CLENBQUMsUUFBUSxDQUFDLFFBQVEsQ0FBQyxlQUFlLEVBQUUsRUFBRSxPQUFPLEVBQUUsYUFBYSxFQUFFLENBQUMsQ0FBQztRQUN0RixDQUFDLENBQUM7SUFDSixDQUFDO3NHQXBCVSx5QkFBeUI7NEZBQXpCLHlCQUF5QjtZQ1R0QyxvQ0FZaUI7OztZQUhmLEFBREEsQUFEQSxBQUhBLEFBREEsMkVBQXlELHdDQUN0QixlQUdyQixzQkFDTyx1QkFDSDs7O2lGREFQLHlCQUF5QjtjQUxyQyxTQUFTOzJCQUNFLG9CQUFvQjt1Q0FNdkIsSUFBSTtrQkFEVixLQUFLO1lBSUMsY0FBYztrQkFEcEIsS0FBSztZQUlDLFVBQVU7a0JBRGhCLE1BQU07O2tGQVBJLHlCQUF5QiIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IENvbXBvbmVudCwgRXZlbnRFbWl0dGVyLCBJbnB1dCwgTmdab25lLCBPdXRwdXQgfSBmcm9tICdAYW5ndWxhci9jb3JlJztcclxuaW1wb3J0IHsgSVBERlZpZXdlckFwcGxpY2F0aW9uIH0gZnJvbSAnLi4vLi4vb3B0aW9ucy9wZGYtdmlld2VyLWFwcGxpY2F0aW9uJztcclxuaW1wb3J0IHsgUmVzcG9uc2l2ZVZpc2liaWxpdHkgfSBmcm9tICcuLi8uLi9yZXNwb25zaXZlLXZpc2liaWxpdHknO1xyXG5cclxuQENvbXBvbmVudCh7XHJcbiAgc2VsZWN0b3I6ICdwZGYtdG9nZ2xlLXNpZGViYXInLFxyXG4gIHRlbXBsYXRlVXJsOiAnLi9wZGYtdG9nZ2xlLXNpZGViYXIuY29tcG9uZW50Lmh0bWwnLFxyXG4gIHN0eWxlVXJsczogWycuL3BkZi10b2dnbGUtc2lkZWJhci5jb21wb25lbnQuY3NzJ10sXHJcbn0pXHJcbmV4cG9ydCBjbGFzcyBQZGZUb2dnbGVTaWRlYmFyQ29tcG9uZW50IHtcclxuICBASW5wdXQoKVxyXG4gIHB1YmxpYyBzaG93OiBSZXNwb25zaXZlVmlzaWJpbGl0eSA9IHRydWU7XHJcblxyXG4gIEBJbnB1dCgpXHJcbiAgcHVibGljIHNpZGViYXJWaXNpYmxlOiBib29sZWFuIHwgdW5kZWZpbmVkID0gZmFsc2U7XHJcblxyXG4gIEBPdXRwdXQoKVxyXG4gIHB1YmxpYyBzaG93Q2hhbmdlID0gbmV3IEV2ZW50RW1pdHRlcjxib29sZWFuPigpO1xyXG5cclxuICBwdWJsaWMgb25DbGljazogKCkgPT4gdm9pZDtcclxuXHJcbiAgY29uc3RydWN0b3IocHJpdmF0ZSBuZ1pvbmU6IE5nWm9uZSkge1xyXG4gICAgY29uc3QgZW1pdHRlciA9IHRoaXMuc2hvd0NoYW5nZTtcclxuICAgIHRoaXMub25DbGljayA9ICgpID0+IHtcclxuICAgICAgY29uc3QgUERGVmlld2VyQXBwbGljYXRpb246IElQREZWaWV3ZXJBcHBsaWNhdGlvbiA9ICh3aW5kb3cgYXMgYW55KS5QREZWaWV3ZXJBcHBsaWNhdGlvbjtcclxuICAgICAgY29uc3QgbmV3VmlzaWJpbGl0eSA9ICFQREZWaWV3ZXJBcHBsaWNhdGlvbi5wZGZTaWRlYmFyLmlzT3BlbjtcclxuICAgICAgZW1pdHRlci5lbWl0KG5ld1Zpc2liaWxpdHkpO1xyXG4gICAgICBQREZWaWV3ZXJBcHBsaWNhdGlvbi5ldmVudEJ1cy5kaXNwYXRjaCgndG9nZ2xlU2lkZWJhcicsIHsgdmlzaWJsZTogbmV3VmlzaWJpbGl0eSB9KTtcclxuICAgIH07XHJcbiAgfVxyXG59XHJcbiIsIjxwZGYtc2h5LWJ1dHRvblxyXG4gIHRpdGxlPVwiVG9nZ2xlIFNpZGViYXJcIlxyXG4gIHByaW1hcnlUb29sYmFySWQ9XCJwcmltYXJ5U2lkZWJhclRvZ2dsZVwiXHJcbiAgW2Nzc0NsYXNzXT1cInNob3cgfCByZXNwb25zaXZlQ1NTQ2xhc3MgOiAnYWx3YXlzLXZpc2libGUnXCJcclxuICBbdG9nZ2xlZF09XCJzaWRlYmFyVmlzaWJsZSA9PT0gdHJ1ZVwiXHJcbiAgbDEwbklkPVwicGRmanMtdG9nZ2xlLXNpZGViYXItYnV0dG9uXCJcclxuICBsMTBuTGFiZWw9XCJwZGZqcy10b2dnbGUtc2lkZWJhci1idXR0b24tbGFiZWxcIlxyXG4gIFtvcmRlcl09XCI0NTAwXCJcclxuICBbY2xvc2VPbkNsaWNrXT1cInRydWVcIlxyXG4gIFthY3Rpb25dPVwib25DbGlja1wiXHJcbiAgaW1hZ2U9XCI8c3ZnIHdpZHRoPScyNHB4JyBoZWlnaHQ9JzI0cHgnIHZpZXdCb3g9JzAgMCAyNCAyNCc+IDxwYXRoIGZpbGw9J2N1cnJlbnRDb2xvcicgZD0nTTMsOUgxN1Y3SDNWOU0zLDEzSDE3VjExSDNWMTNNMywxN0gxN1YxNUgzVjE3TTE5LDE3SDIxVjE1SDE5VjE3TTE5LDdWOUgyMVY3SDE5TTE5LDEzSDIxVjExSDE5VjEzWicgLz4gPC9zdmc+XCJcclxuPlxyXG48L3BkZi1zaHktYnV0dG9uPlxyXG4iXX0=

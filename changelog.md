@@ -307,7 +307,7 @@
 - 11.0.0-alpha.0 #995 performance improvements; #991/#1000 better detection of browsers lacking support for optional chaining; updated to pdf.js 2.11 (default) and pdf.js 2.12 (bleeding-edge branch); added the new "page scroll" mode of pdf.js 2.12 (which is essentially identical to `[pageViewMode]="'single'", but implemented independently by the pdf.js team) (only supported by the "bleeding edge" branch)
 - 11.0.0-alpha.1 now the default version of pdf.js is really 2.11.531 (the alpha.0 version accidentally delivered version 2.12.350)
 - 11.0.0-alpha.2 #998 add an additional log message to hunt down the Cypress bug
-- 11.0.0-alpha.3 #1013 lower the reqirements to RxJS 6; #1015 #995 removed the custom single-page-mode in favor of the new `[pageScrollMode]="3"` of pdf.js 2.12
+- 11.0.0-alpha.3 #1013 lower the reqirements to RxJS 6; #1015 #995 removed the custom single-page-mode in favor of the new `[scrollMode]="3"` of pdf.js 2.12
 - 11.0.0-alpha.4 #804 allow users to filter log messages
 - 11.0.0-alpha.5 #1030 ignore tiny rounding difference when emitting `(zoomChange)`; #1035 fix the "Window is not defined" error message
 - 11.0.0-alpha.6 #1040 fixed the single-page mode of the bleeding-edge branch; #804 detect the worker thread more reliably
@@ -505,9 +505,41 @@
 - 18.1.7 #1957 allow Angular 17 users to use the library
 - 18.1.8 #1920 fixed the bug that every checkbox was initially checked in many PDF forms
 - 18.1.9 #1972 fixed several missing translations (kudos to Daphné Bellemin for contributing the pull request); #1969 now also radio-button checkboxes have the correct initial value
-- 18.1.10 #1979 fixed the declaration of `UpdateUIStateEvent`
-- 18.1.11 #1992 fixed the NaN% issue loading the zoom dropdown component
-- 18.1.12 #1989 make sure that pages below the fold are rendered when `pageViewMode="infinite-scroll"`
-- 18.1.13 reduced the size of the viewer.js file; removed the folder ` images`` and the  `additional-locale` from the distribution package; #1961 now the schematics cops with stand-alone projects
-- 18.1.14 #1961 now the schematics copes with stand-alone projects; #1987 make the radio buttons of the secondary menu more reliable, and hide the secondary menu more reliably when it's empty; don't close the secondary menu when the "single page mode" menu is clicked
-- 18.1.15 #2078 scrollIntoView() now works again even on high zoom levels
+- 18.2.0-alpha.0 #1976 update the bleeding edge branch to pdf.js 4.0; added optional parameters to the `[action]` attribute of the `PdfShyButton` allowing you to access the event and to distinguish buttons in the primary toolbar from menu entries in the secondary menu; fixed `PDFNotificationService.pdfjsVersion` which previous showed the wrong version number.
+- 18.2.0-alpha.1 #1976 updated the i18n labels to pdf.js 4.0
+- 19.0.0-alpha.0 #1983 fixed `(spreadChange)`; #1979 fixed the declaration of `UpdateUIStateEvent`; #1990 fixed loading the sandbox; #1976 fixed several other bugs caused by updating to pdf.js 4.0; now the stable branch also uses my fork of pdf.js 4.0.269
+- 19.0.0-alpha.1 #1976 added missing translations (bleeding edge only)
+- 19.0.0-alpha.2 #1976 added missing translations; stop adding pdf.mjs to the minified build of viewer.min.mjs
+- 19.0.0-alpha.3 #1976 updated the compatibility promise: ngx-extended-pdf-viewer 19+ is incompatible to Angular 15 and below
+- 19.0.0-alpha.4 #1976 added the additional locales again and removed the attribute `useBrowserLocale`
+- 19.0.0-alpha.5 #1989 make sure that pages below the fold are rendered when `pageViewMode="infinite-scroll"`; #2011 added the HTML required by the new (still invisible) highlight editor of pdf.js
+- 19.0.0-alpha.6 #1961 now the schematics copes with stand-alone projects
+- 19.0.0-alpha.7 #1997 added missing translations
+- 19.0.0 #1987 make the radio buttons of the secondary menu more reliable, and hide the secondary menu more reliably when it's empty; don't close the secondary menu when the "single page mode" menu is clicked
+- 19.0.1 #766 make book mode preloading more reliable
+- 19.0.2 #766 suppress the double-click zoom in book mode; #2007 stop shipping the outdated version of pdf.js 3.9
+- 19.0.3 #2007 now the minified worker file is loaded again if the PDF viewer uses the minified files (`[minifiedJSLibraries]="true"`); this was broken since version 18.2.0-alpha.0
+- 19.0.4 #2045 render the zoom level even if it's not one of the predefined zoom levels
+- 19.0.5 #2051 fixed the `[page]` when the PDF is loaded; #2045 render the zoom level even if it's not one of the predefined zoom levels
+- 19.0.6 #2077 document that the library requires RxJS 7 or higher
+- 19.0.7 #2096 fixed a bug that broke - among other things - printing of multi-page documents; #2091 added a forgotten event to the public API; #2081 fixed `(pagesLoaded)`
+- 19.1.0 #2099 updated to pdf.js 4.0.375; #2016 updated the CSS rules --> annotations can now be deleted
+- 19.2.0 #2116 inlined draw_layer_builder.scss because it wasn't loaded at all (might be a breaking change); #2071 initialize the event listeners even if `[src]="undefined` (might be a breaking change)
+- 19.2.1 dependency updates; #2078 scrollIntoView() now works again even on high zoom levels
+- 19.2.2 #2138 stop opening the file dialog when opening the "stamp editor" menu - kudos to GitHub user BulletQQ for teaching me how to solve the issue! Also fixed the layout of the stamp editor popup menu
+- 19.3.0 #2165 fixed the method `NgxExtendedPdfViewerService.hasPageBeenRendered()`. Strictly speaking it's a breaking change because previously the method did the exact opposite of what the name indicates.
+- 19.4.0-alpha.0 #2148 update the buttons the annotation editor mode changes programmatically; add typing the the editor modes; added `NgxExtendedePdfViewerService.addImageToAnnotationLayer()` and several helper methods. Caveat: the API is going to change slightly
+- 19.4.0-alpha.1 #2148 update the buttons then the annotation editor mode changes programmatically; add typing the the editor modes
+- 19.4.0-alpha.2 #2148 allow to pass both native pdf.js coordinate and percentages to `NgxExtendedePdfViewerService.addImageToAnnotationLayer()`
+- 19.4.0 #2180 improve CSP (content security policy) support; allow to pass pixels to `NgxExtendedePdfViewerService.addImageToAnnotationLayer()`; #2179 restrict the file open dialog to PDF files; #2168 split the `<pdf-rotate-page>` into `<pdf-rotate-page-cw>` and `<pdf-rotate-page-ccw>`
+- 19.4.1 #2120 stop firing `(pdfLoaded)` twice when `[src]` fires; refactored `scrollSignatureWarningIntoView()`
+- 19.5.0 #2221 improve support for CSP (content security policy); tidy up the code generating thumbnails; stop showing thumbnail images while loading
+- 19.5.1 #2221 display the toolbar correctly (probably this breaks CSP support again); #2239 `currentPageIndex()` and `addImageToAnnotationLayer()` now return / expect the page index (starting with 0) instead of the page number (starting with 1)
+- 19.6.0 #2256 emit events when a user adds, removes, or edits an annotation; #2228 fixed highlight editor; updated the browser compatibility list
+- 19.6.1 #2240 allow developers to use the variable PAGE_NUMBER in thumbnails again (was broken in version 19.5.0).
+- 19.6.2 #2245 fixed an SSR issue; #2255 / #2242 make sure that `getSerializedAnnotation()` does not export form fields
+- 19.6.3 #2273 fixed: server side rendering adds two toolbars
+- 19.6.5 #2273 made the `NgxExtendedPdfViewerService` ready for SSR; #1301 fix `NgxExtendedPdfViewer.scrollPageIntoView()` (was broken when omitting the optional parameter) (bleeding edge branch only); #2228 fixed a few layout glitches (defunct highlight toggle button and oversized zoom in button)
+- 19.6.6 #1301 fix `NgxExtendedPdfViewer.scrollPageIntoView()` (was broken when omitting the optional parameter) (stable branch)
+- 19.7.0 #2242 stop removing form fields when removing editors with `NgxExtendedPdfViewerService.removeEditorAnnotations()`; #2208 modify annotation editor attributes programmatically
+- 19.7.1 #2275 prevent accidental firing of `(pageChange)` and `(pageLabelChange)` when changing the `pageViewMode

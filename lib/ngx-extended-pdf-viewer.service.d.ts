@@ -1,7 +1,9 @@
+import { RendererFactory2 } from '@angular/core';
 import { Subject } from 'rxjs';
+import { EditorAnnotation } from './options/editor-annotations';
 import { PdfLayer } from './options/optional_content_config';
 import { PDFPrintRange } from './options/pdf-print-range';
-import { EditorAnnotation } from './options/pdf-viewer';
+import * as i0 from "@angular/core";
 export interface FindOptions {
     highlightAll?: boolean;
     matchCase?: boolean;
@@ -13,7 +15,16 @@ export interface PDFExportScaleFactor {
     height?: number;
     scale?: number;
 }
-declare type DirectionType = 'ltr' | 'rtl' | 'both' | undefined;
+type DirectionType = 'ltr' | 'rtl' | 'both' | undefined;
+export interface PdfImageParameters {
+    urlOrDataUrl: string;
+    page?: number;
+    left?: number | string;
+    bottom?: number | string;
+    right?: number | string;
+    top?: number | string;
+    rotation?: 0 | 90 | 180 | 270;
+}
 export interface Line {
     x: number;
     y: number;
@@ -31,9 +42,12 @@ export interface Section {
     lines: Array<Line>;
 }
 export declare class NgxExtendedPdfViewerService {
+    private rendererFactory;
     ngxExtendedPdfViewerInitialized: boolean;
     recalculateSize$: Subject<void>;
     secondaryMenuIsEmpty: boolean;
+    private renderer;
+    constructor(rendererFactory: RendererFactory2);
     find(text: string, options?: FindOptions): boolean;
     findNext(): boolean;
     findPrevious(): boolean;
@@ -59,6 +73,8 @@ export declare class NgxExtendedPdfViewerService {
     addPageToRenderQueue(pageIndex: number): boolean;
     isRenderQueueEmpty(): boolean;
     hasPageBeenRendered(pageIndex: number): boolean;
+    private sleep;
+    renderPage(pageIndex: number): Promise<void>;
     currentlyRenderedPages(): Array<number>;
     numberOfPages(): number;
     getCurrentlyVisiblePageNumbers(): Array<number>;
@@ -72,5 +88,22 @@ export declare class NgxExtendedPdfViewerService {
     getSerializedAnnotations(): EditorAnnotation[] | null;
     addEditorAnnotation(serializedAnnotation: string | EditorAnnotation): void;
     removeEditorAnnotations(filter?: (serialized: object) => boolean): void;
+    private loadImageAsDataURL;
+    addImageToAnnotationLayer({ urlOrDataUrl, page, left, bottom, right, top, rotation }: PdfImageParameters): Promise<void>;
+    currentPageIndex(): number;
+    private convertToPDFCoordinates;
+    switchAnnotationEdtorMode(mode: number): void;
+    set editorFontSize(size: number);
+    set editorFontColor(color: string);
+    set editorInkColor(color: string);
+    set editorInkOpacity(opacity: number);
+    set editorInkThickness(thickness: number);
+    set editorHighlightColor(color: string);
+    set editorHighlightDefaultColor(color: string);
+    set editorHighlightShowAll(showAll: boolean);
+    set editorHighlightThickness(thickness: number);
+    setEditorProperty(editorPropertyType: number, value: any): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<NgxExtendedPdfViewerService, never>;
+    static ɵprov: i0.ɵɵInjectableDeclaration<NgxExtendedPdfViewerService>;
 }
 export {};

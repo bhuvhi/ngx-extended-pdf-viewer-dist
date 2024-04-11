@@ -14,5 +14,5 @@ export declare class PdfOddSpreadComponent {
     onPdfJsInit(): void;
     onClick(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<PdfOddSpreadComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<PdfOddSpreadComponent, "pdf-odd-spread", never, { "show": "show"; "scrollMode": "scrollMode"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<PdfOddSpreadComponent, "pdf-odd-spread", never, { "show": { "alias": "show"; "required": false; }; "scrollMode": { "alias": "scrollMode"; "required": false; }; }, {}, never, never, false, never>;
 }

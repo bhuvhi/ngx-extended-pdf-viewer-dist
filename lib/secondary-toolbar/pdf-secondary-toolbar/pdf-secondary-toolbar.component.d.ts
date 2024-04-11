@@ -27,7 +27,7 @@ export declare class PdfSecondaryToolbarComponent implements OnChanges, AfterVie
     ngOnDestroy(): void;
     checkVisibility(): void;
     private checkVisibilityRecursively;
-    onClick(htmlevent: Event, action: undefined | (() => void), eventBusName?: string, closeOnClick?: boolean): void;
+    onClick(htmlevent: Event, action: undefined | ((htmlevent: Event, secondaryToolbar: boolean) => void), eventBusName?: string, closeOnClick?: boolean): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<PdfSecondaryToolbarComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<PdfSecondaryToolbarComponent, "pdf-secondary-toolbar", never, { "customSecondaryToolbar": "customSecondaryToolbar"; "secondaryToolbarTop": "secondaryToolbarTop"; "mobileFriendlyZoomScale": "mobileFriendlyZoomScale"; "localizationInitialized": "localizationInitialized"; }, { "spreadChange": "spreadChange"; }, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<PdfSecondaryToolbarComponent, "pdf-secondary-toolbar", never, { "customSecondaryToolbar": { "alias": "customSecondaryToolbar"; "required": false; }; "secondaryToolbarTop": { "alias": "secondaryToolbarTop"; "required": false; }; "mobileFriendlyZoomScale": { "alias": "mobileFriendlyZoomScale"; "required": false; }; "localizationInitialized": { "alias": "localizationInitialized"; "required": false; }; }, { "spreadChange": "spreadChange"; }, never, never, false, never>;
 }

@@ -9,5 +9,5 @@ export declare class PdfHandToolComponent {
     private onPdfJsInit;
     onClick(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<PdfHandToolComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<PdfHandToolComponent, "pdf-hand-tool", never, { "showHandToolButton": "showHandToolButton"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<PdfHandToolComponent, "pdf-hand-tool", never, { "showHandToolButton": { "alias": "showHandToolButton"; "required": false; }; }, {}, never, never, false, never>;
 }

@@ -14,5 +14,5 @@ export declare class PdfNoSpreadComponent {
     onPdfJsInit(): void;
     onClick(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<PdfNoSpreadComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<PdfNoSpreadComponent, "pdf-no-spread", never, { "show": "show"; "scrollMode": "scrollMode"; }, {}, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<PdfNoSpreadComponent, "pdf-no-spread", never, { "show": { "alias": "show"; "required": false; }; "scrollMode": { "alias": "scrollMode"; "required": false; }; }, {}, never, never, false, never>;
 }

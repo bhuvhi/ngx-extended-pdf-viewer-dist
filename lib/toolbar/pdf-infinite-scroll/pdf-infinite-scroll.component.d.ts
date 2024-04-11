@@ -11,5 +11,5 @@ export declare class PdfInfiniteScrollComponent {
     onClick: () => void;
     constructor(ngZone: NgZone);
     static ɵfac: i0.ɵɵFactoryDeclaration<PdfInfiniteScrollComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<PdfInfiniteScrollComponent, "pdf-infinite-scroll", never, { "show": "show"; "pageViewMode": "pageViewMode"; "scrollMode": "scrollMode"; }, { "pageViewModeChange": "pageViewModeChange"; }, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<PdfInfiniteScrollComponent, "pdf-infinite-scroll", never, { "show": { "alias": "show"; "required": false; }; "pageViewMode": { "alias": "pageViewMode"; "required": false; }; "scrollMode": { "alias": "scrollMode"; "required": false; }; }, { "pageViewModeChange": "pageViewModeChange"; }, never, never, false, never>;
 }
