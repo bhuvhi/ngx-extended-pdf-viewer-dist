@@ -1,0 +1,21 @@
+import { Component } from '@angular/core';
+import * as i0 from "@angular/core";
+export class PdfFindNextComponent {
+}
+/** @nocollapse */ PdfFindNextComponent.ɵfac = function PdfFindNextComponent_Factory(t) { return new (t || PdfFindNextComponent)(); };
+/** @nocollapse */ PdfFindNextComponent.ɵcmp = /** @pureOrBreakMyCode */ i0.ɵɵdefineComponent({ type: PdfFindNextComponent, selectors: [["pdf-find-next"]], decls: 5, vars: 0, consts: [["type", "button", "id", "findNext", "title", "Find the next occurrence of the phrase", "data-l10n-id", "find_next", "aria-label", "Find the next occurrence of the phrase", 1, "toolbarButton"], ["role", "img", "aria-label", "Find the next occurrence of the phrase", "viewBox", "0 0 24 24", 2, "width", "24px", "height", "24px"], ["fill", "currentColor", "d", "M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"], ["data-l10n-id", "find_next_label"]], template: function PdfFindNextComponent_Template(rf, ctx) { if (rf & 1) {
+        i0.ɵɵelementStart(0, "button", 0);
+        i0.ɵɵnamespaceSVG();
+        i0.ɵɵelementStart(1, "svg", 1);
+        i0.ɵɵelement(2, "path", 2);
+        i0.ɵɵelementEnd();
+        i0.ɵɵnamespaceHTML();
+        i0.ɵɵelementStart(3, "span", 3);
+        i0.ɵɵtext(4, "Next");
+        i0.ɵɵelementEnd()();
+    } }, styles: ["button.toolbarButton#findNext[_ngcontent-%COMP%]{margin-top:0;margin-left:-4px!important;margin-right:3px!important;width:24px}"] });
+(function () { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(PdfFindNextComponent, [{
+        type: Component,
+        args: [{ selector: 'pdf-find-next', template: "<button\n  type=\"button\"\n  id=\"findNext\"\n  class=\"toolbarButton\"\n  title=\"Find the next occurrence of the phrase\"\n  data-l10n-id=\"find_next\"\n  aria-label=\"Find the next occurrence of the phrase\"\n>\n  <svg role=\"img\" aria-label=\"Find the next occurrence of the phrase\" style=\"width: 24px; height: 24px\" viewBox=\"0 0 24 24\">\n    <path fill=\"currentColor\" d=\"M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z\" />\n  </svg>\n  <span data-l10n-id=\"find_next_label\">Next</span>\n</button>\n", styles: ["button.toolbarButton#findNext{margin-top:0;margin-left:-4px!important;margin-right:3px!important;width:24px}\n"] }]
+    }], null, null); })();
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicGRmLWZpbmQtbmV4dC5jb21wb25lbnQuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi8uLi8uLi8uLi8uLi9wcm9qZWN0cy9uZ3gtZXh0ZW5kZWQtcGRmLXZpZXdlci9zcmMvbGliL3Rvb2xiYXIvcGRmLWZpbmRiYXIvcGRmLWZpbmQtbmV4dC9wZGYtZmluZC1uZXh0LmNvbXBvbmVudC50cyIsIi4uLy4uLy4uLy4uLy4uLy4uLy4uL3Byb2plY3RzL25neC1leHRlbmRlZC1wZGYtdmlld2VyL3NyYy9saWIvdG9vbGJhci9wZGYtZmluZGJhci9wZGYtZmluZC1uZXh0L3BkZi1maW5kLW5leHQuY29tcG9uZW50Lmh0bWwiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsT0FBTyxFQUFFLFNBQVMsRUFBRSxNQUFNLGVBQWUsQ0FBQzs7QUFPMUMsTUFBTSxPQUFPLG9CQUFvQjs7MkdBQXBCLG9CQUFvQjtzR0FBcEIsb0JBQW9CO1FDUGpDLGlDQU9DO1FBQ0MsbUJBQTBIO1FBQTFILDhCQUEwSDtRQUN4SCwwQkFBNEY7UUFDOUYsaUJBQU07UUFDTixvQkFBcUM7UUFBckMsK0JBQXFDO1FBQUEsb0JBQUk7UUFBQSxpQkFBTyxFQUFBOzt1RkRKckMsb0JBQW9CO2NBTGhDLFNBQVM7MkJBQ0UsZUFBZSIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IENvbXBvbmVudCB9IGZyb20gJ0Bhbmd1bGFyL2NvcmUnO1xuXG5AQ29tcG9uZW50KHtcbiAgc2VsZWN0b3I6ICdwZGYtZmluZC1uZXh0JyxcbiAgdGVtcGxhdGVVcmw6ICcuL3BkZi1maW5kLW5leHQuY29tcG9uZW50Lmh0bWwnLFxuICBzdHlsZVVybHM6IFsnLi9wZGYtZmluZC1uZXh0LmNvbXBvbmVudC5jc3MnXSxcbn0pXG5leHBvcnQgY2xhc3MgUGRmRmluZE5leHRDb21wb25lbnQge31cbiIsIjxidXR0b25cbiAgdHlwZT1cImJ1dHRvblwiXG4gIGlkPVwiZmluZE5leHRcIlxuICBjbGFzcz1cInRvb2xiYXJCdXR0b25cIlxuICB0aXRsZT1cIkZpbmQgdGhlIG5leHQgb2NjdXJyZW5jZSBvZiB0aGUgcGhyYXNlXCJcbiAgZGF0YS1sMTBuLWlkPVwiZmluZF9uZXh0XCJcbiAgYXJpYS1sYWJlbD1cIkZpbmQgdGhlIG5leHQgb2NjdXJyZW5jZSBvZiB0aGUgcGhyYXNlXCJcbj5cbiAgPHN2ZyByb2xlPVwiaW1nXCIgYXJpYS1sYWJlbD1cIkZpbmQgdGhlIG5leHQgb2NjdXJyZW5jZSBvZiB0aGUgcGhyYXNlXCIgc3R5bGU9XCJ3aWR0aDogMjRweDsgaGVpZ2h0OiAyNHB4XCIgdmlld0JveD1cIjAgMCAyNCAyNFwiPlxuICAgIDxwYXRoIGZpbGw9XCJjdXJyZW50Q29sb3JcIiBkPVwiTTguNTksMTYuNThMMTMuMTcsMTJMOC41OSw3LjQxTDEwLDZMMTYsMTJMMTAsMThMOC41OSwxNi41OFpcIiAvPlxuICA8L3N2Zz5cbiAgPHNwYW4gZGF0YS1sMTBuLWlkPVwiZmluZF9uZXh0X2xhYmVsXCI+TmV4dDwvc3Bhbj5cbjwvYnV0dG9uPlxuIl19

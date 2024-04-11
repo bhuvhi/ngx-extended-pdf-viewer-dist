@@ -1,0 +1,21 @@
+import { Component } from '@angular/core';
+import * as i0 from "@angular/core";
+export class PdfFindPreviousComponent {
+}
+/** @nocollapse */ PdfFindPreviousComponent.ɵfac = function PdfFindPreviousComponent_Factory(t) { return new (t || PdfFindPreviousComponent)(); };
+/** @nocollapse */ PdfFindPreviousComponent.ɵcmp = /** @pureOrBreakMyCode */ i0.ɵɵdefineComponent({ type: PdfFindPreviousComponent, selectors: [["pdf-find-previous"]], decls: 5, vars: 0, consts: [["type", "button", "id", "findPrevious", "title", "Find the previous occurrence of the phrase", "data-l10n-id", "find_previous", "aria-label", "Find the previous occurrence of the phrase", 1, "toolbarButton"], ["role", "img", "aria-label", "Find the previous occurrence of the phrase", "viewBox", "0 0 24 24", 2, "width", "24px", "height", "24px"], ["fill", "currentColor", "d", "M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z"], ["data-l10n-id", "find_previous_label"]], template: function PdfFindPreviousComponent_Template(rf, ctx) { if (rf & 1) {
+        i0.ɵɵelementStart(0, "button", 0);
+        i0.ɵɵnamespaceSVG();
+        i0.ɵɵelementStart(1, "svg", 1);
+        i0.ɵɵelement(2, "path", 2);
+        i0.ɵɵelementEnd();
+        i0.ɵɵnamespaceHTML();
+        i0.ɵɵelementStart(3, "span", 3);
+        i0.ɵɵtext(4, "Previous");
+        i0.ɵɵelementEnd()();
+    } }, styles: ["button.toolbarButton#findPrevious[_ngcontent-%COMP%]{margin-top:0;width:24px;margin-left:1px!important}"] });
+(function () { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(PdfFindPreviousComponent, [{
+        type: Component,
+        args: [{ selector: 'pdf-find-previous', template: "<button\n  type=\"button\"\n  id=\"findPrevious\"\n  class=\"toolbarButton\"\n  title=\"Find the previous occurrence of the phrase\"\n  data-l10n-id=\"find_previous\"\n  aria-label=\"Find the previous occurrence of the phrase\"\n>\n  <svg role=\"img\" aria-label=\"Find the previous occurrence of the phrase\" style=\"width: 24px; height: 24px\" viewBox=\"0 0 24 24\">\n    <path fill=\"currentColor\" d=\"M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z\" />\n  </svg>\n  <span data-l10n-id=\"find_previous_label\">Previous</span>\n</button>\n", styles: ["button.toolbarButton#findPrevious{margin-top:0;width:24px;margin-left:1px!important}\n"] }]
+    }], null, null); })();
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicGRmLWZpbmQtcHJldmlvdXMuY29tcG9uZW50LmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vLi4vLi4vLi4vLi4vLi4vcHJvamVjdHMvbmd4LWV4dGVuZGVkLXBkZi12aWV3ZXIvc3JjL2xpYi90b29sYmFyL3BkZi1maW5kYmFyL3BkZi1maW5kLXByZXZpb3VzL3BkZi1maW5kLXByZXZpb3VzLmNvbXBvbmVudC50cyIsIi4uLy4uLy4uLy4uLy4uLy4uLy4uL3Byb2plY3RzL25neC1leHRlbmRlZC1wZGYtdmlld2VyL3NyYy9saWIvdG9vbGJhci9wZGYtZmluZGJhci9wZGYtZmluZC1wcmV2aW91cy9wZGYtZmluZC1wcmV2aW91cy5jb21wb25lbnQuaHRtbCJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxPQUFPLEVBQUUsU0FBUyxFQUFFLE1BQU0sZUFBZSxDQUFDOztBQU8xQyxNQUFNLE9BQU8sd0JBQXdCOzttSEFBeEIsd0JBQXdCOzBHQUF4Qix3QkFBd0I7UUNQckMsaUNBT0M7UUFDQyxtQkFBOEg7UUFBOUgsOEJBQThIO1FBQzVILDBCQUE4RjtRQUNoRyxpQkFBTTtRQUNOLG9CQUF5QztRQUF6QywrQkFBeUM7UUFBQSx3QkFBUTtRQUFBLGlCQUFPLEVBQUE7O3VGREo3Qyx3QkFBd0I7Y0FMcEMsU0FBUzsyQkFDRSxtQkFBbUIiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBDb21wb25lbnQgfSBmcm9tICdAYW5ndWxhci9jb3JlJztcblxuQENvbXBvbmVudCh7XG4gIHNlbGVjdG9yOiAncGRmLWZpbmQtcHJldmlvdXMnLFxuICB0ZW1wbGF0ZVVybDogJy4vcGRmLWZpbmQtcHJldmlvdXMuY29tcG9uZW50Lmh0bWwnLFxuICBzdHlsZVVybHM6IFsnLi9wZGYtZmluZC1wcmV2aW91cy5jb21wb25lbnQuY3NzJ10sXG59KVxuZXhwb3J0IGNsYXNzIFBkZkZpbmRQcmV2aW91c0NvbXBvbmVudCB7fVxuIiwiPGJ1dHRvblxuICB0eXBlPVwiYnV0dG9uXCJcbiAgaWQ9XCJmaW5kUHJldmlvdXNcIlxuICBjbGFzcz1cInRvb2xiYXJCdXR0b25cIlxuICB0aXRsZT1cIkZpbmQgdGhlIHByZXZpb3VzIG9jY3VycmVuY2Ugb2YgdGhlIHBocmFzZVwiXG4gIGRhdGEtbDEwbi1pZD1cImZpbmRfcHJldmlvdXNcIlxuICBhcmlhLWxhYmVsPVwiRmluZCB0aGUgcHJldmlvdXMgb2NjdXJyZW5jZSBvZiB0aGUgcGhyYXNlXCJcbj5cbiAgPHN2ZyByb2xlPVwiaW1nXCIgYXJpYS1sYWJlbD1cIkZpbmQgdGhlIHByZXZpb3VzIG9jY3VycmVuY2Ugb2YgdGhlIHBocmFzZVwiIHN0eWxlPVwid2lkdGg6IDI0cHg7IGhlaWdodDogMjRweFwiIHZpZXdCb3g9XCIwIDAgMjQgMjRcIj5cbiAgICA8cGF0aCBmaWxsPVwiY3VycmVudENvbG9yXCIgZD1cIk0xNS40MSwxNi41OEwxMC44MywxMkwxNS40MSw3LjQxTDE0LDZMOCwxMkwxNCwxOEwxNS40MSwxNi41OFpcIiAvPlxuICA8L3N2Zz5cbiAgPHNwYW4gZGF0YS1sMTBuLWlkPVwiZmluZF9wcmV2aW91c19sYWJlbFwiPlByZXZpb3VzPC9zcGFuPlxuPC9idXR0b24+XG4iXX0=

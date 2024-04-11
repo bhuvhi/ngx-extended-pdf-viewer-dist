@@ -1,0 +1,23 @@
+import { Component, Input } from '@angular/core';
+import * as i0 from "@angular/core";
+import * as i1 from "../pdf-shy-button/pdf-shy-button.component";
+import * as i2 from "../../responsive-visibility";
+export class PdfOpenFileComponent {
+    constructor() {
+        this.showOpenFileButton = true;
+    }
+}
+/** @nocollapse */ PdfOpenFileComponent.ɵfac = function PdfOpenFileComponent_Factory(t) { return new (t || PdfOpenFileComponent)(); };
+/** @nocollapse */ PdfOpenFileComponent.ɵcmp = /** @pureOrBreakMyCode */ i0.ɵɵdefineComponent({ type: PdfOpenFileComponent, selectors: [["pdf-open-file"]], inputs: { showOpenFileButton: "showOpenFileButton" }, decls: 2, vars: 5, consts: [["primaryToolbarId", "openFile", "title", "Open File", "l10nId", "open_file", "l10nLabel", "open_file_label", "image", "<svg style='width: 24px; height: 20px' viewBox='0 0 24 24'><path fill='currentColor' d='M14,2L20,8V20A2,2 0 0,1 18,22H6A2,2 0 0,1 4,20V4A2,2 0 0,1 6,2H14M18,20V9H13V4H6V20H18M12,12L16,16H13.5V19H10.5V16H8L12,12Z' /></svg>", 3, "cssClass", "order"]], template: function PdfOpenFileComponent_Template(rf, ctx) { if (rf & 1) {
+        i0.ɵɵelement(0, "pdf-shy-button", 0);
+        i0.ɵɵpipe(1, "responsiveCSSClass");
+    } if (rf & 2) {
+        i0.ɵɵproperty("cssClass", i0.ɵɵpipeBind2(1, 2, ctx.showOpenFileButton, "hiddenMediumView"))("order", 200);
+    } }, directives: [i1.PdfShyButtonComponent], pipes: [i2.ResponsiveCSSClassPipe], styles: ["[_nghost-%COMP%]{margin-top:0}[_nghost-%COMP%]:focus{outline:none}button[_ngcontent-%COMP%]:focus{outline:none}svg[_ngcontent-%COMP%]:focus{outline:none}button[_ngcontent-%COMP%]{padding:0}"] });
+(function () { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(PdfOpenFileComponent, [{
+        type: Component,
+        args: [{ selector: 'pdf-open-file', template: "<pdf-shy-button\n  [cssClass]=\"showOpenFileButton | responsiveCSSClass : 'hiddenMediumView'\"\n  primaryToolbarId=\"openFile\"\n  title=\"Open File\"\n  l10nId=\"open_file\"\n  l10nLabel=\"open_file_label\"\n  image=\"<svg style='width: 24px; height: 20px' viewBox='0 0 24 24'><path fill='currentColor' d='M14,2L20,8V20A2,2 0 0,1 18,22H6A2,2 0 0,1 4,20V4A2,2 0 0,1 6,2H14M18,20V9H13V4H6V20H18M12,12L16,16H13.5V19H10.5V16H8L12,12Z' /></svg>\"\n  [order]=\"200\"\n>\n</pdf-shy-button>\n", styles: [":host{margin-top:0}:host:focus{outline:none}button:focus{outline:none}svg:focus{outline:none}button{padding:0}\n"] }]
+    }], null, { showOpenFileButton: [{
+            type: Input
+        }] }); })();
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicGRmLW9wZW4tZmlsZS5jb21wb25lbnQuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi8uLi8uLi8uLi9wcm9qZWN0cy9uZ3gtZXh0ZW5kZWQtcGRmLXZpZXdlci9zcmMvbGliL3Rvb2xiYXIvcGRmLW9wZW4tZmlsZS9wZGYtb3Blbi1maWxlLmNvbXBvbmVudC50cyIsIi4uLy4uLy4uLy4uLy4uLy4uL3Byb2plY3RzL25neC1leHRlbmRlZC1wZGYtdmlld2VyL3NyYy9saWIvdG9vbGJhci9wZGYtb3Blbi1maWxlL3BkZi1vcGVuLWZpbGUuY29tcG9uZW50Lmh0bWwiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsT0FBTyxFQUFFLFNBQVMsRUFBRSxLQUFLLEVBQUUsTUFBTSxlQUFlLENBQUM7Ozs7QUFRakQsTUFBTSxPQUFPLG9CQUFvQjtJQUxqQztRQU9TLHVCQUFrQixHQUF5QixJQUFJLENBQUM7S0FDeEQ7OzJHQUhZLG9CQUFvQjtzR0FBcEIsb0JBQW9CO1FDUmpDLG9DQVNpQjs7O1FBUmYsMkZBQXlFLGNBQUE7O3VGRE85RCxvQkFBb0I7Y0FMaEMsU0FBUzsyQkFDRSxlQUFlO2dCQU1sQixrQkFBa0I7a0JBRHhCLEtBQUsiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBDb21wb25lbnQsIElucHV0IH0gZnJvbSAnQGFuZ3VsYXIvY29yZSc7XG5pbXBvcnQgeyBSZXNwb25zaXZlVmlzaWJpbGl0eSB9IGZyb20gJy4uLy4uL3Jlc3BvbnNpdmUtdmlzaWJpbGl0eSc7XG5cbkBDb21wb25lbnQoe1xuICBzZWxlY3RvcjogJ3BkZi1vcGVuLWZpbGUnLFxuICB0ZW1wbGF0ZVVybDogJy4vcGRmLW9wZW4tZmlsZS5jb21wb25lbnQuaHRtbCcsXG4gIHN0eWxlVXJsczogWycuL3BkZi1vcGVuLWZpbGUuY29tcG9uZW50LmNzcyddLFxufSlcbmV4cG9ydCBjbGFzcyBQZGZPcGVuRmlsZUNvbXBvbmVudCB7XG4gIEBJbnB1dCgpXG4gIHB1YmxpYyBzaG93T3BlbkZpbGVCdXR0b246IFJlc3BvbnNpdmVWaXNpYmlsaXR5ID0gdHJ1ZTtcbn1cbiIsIjxwZGYtc2h5LWJ1dHRvblxuICBbY3NzQ2xhc3NdPVwic2hvd09wZW5GaWxlQnV0dG9uIHwgcmVzcG9uc2l2ZUNTU0NsYXNzIDogJ2hpZGRlbk1lZGl1bVZpZXcnXCJcbiAgcHJpbWFyeVRvb2xiYXJJZD1cIm9wZW5GaWxlXCJcbiAgdGl0bGU9XCJPcGVuIEZpbGVcIlxuICBsMTBuSWQ9XCJvcGVuX2ZpbGVcIlxuICBsMTBuTGFiZWw9XCJvcGVuX2ZpbGVfbGFiZWxcIlxuICBpbWFnZT1cIjxzdmcgc3R5bGU9J3dpZHRoOiAyNHB4OyBoZWlnaHQ6IDIwcHgnIHZpZXdCb3g9JzAgMCAyNCAyNCc+PHBhdGggZmlsbD0nY3VycmVudENvbG9yJyBkPSdNMTQsMkwyMCw4VjIwQTIsMiAwIDAsMSAxOCwyMkg2QTIsMiAwIDAsMSA0LDIwVjRBMiwyIDAgMCwxIDYsMkgxNE0xOCwyMFY5SDEzVjRINlYyMEgxOE0xMiwxMkwxNiwxNkgxMy41VjE5SDEwLjVWMTZIOEwxMiwxMlonIC8+PC9zdmc+XCJcbiAgW29yZGVyXT1cIjIwMFwiXG4+XG48L3BkZi1zaHktYnV0dG9uPlxuIl19
