@@ -14,5 +14,5 @@ export declare class PdfVerticalScrollModeComponent {
     constructor(notificationService: PDFNotificationService, ngZone: NgZone);
     onPdfJsInit(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<PdfVerticalScrollModeComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<PdfVerticalScrollModeComponent, "pdf-vertical-scroll-mode", never, { "show": { "alias": "show"; "required": false; }; "scrollMode": { "alias": "scrollMode"; "required": false; }; "pageViewMode": { "alias": "pageViewMode"; "required": false; }; }, { "pageViewModeChange": "pageViewModeChange"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<PdfVerticalScrollModeComponent, "pdf-vertical-scroll-mode", never, { "show": "show"; "scrollMode": "scrollMode"; "pageViewMode": "pageViewMode"; }, { "pageViewModeChange": "pageViewModeChange"; }, never, never>;
 }

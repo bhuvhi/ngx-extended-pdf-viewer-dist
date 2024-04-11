@@ -16,5 +16,5 @@ export declare class PdfRotatePageComponent {
     onPdfJsInit(): void;
     updateUIState(event: UpdateUIStateEvent): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<PdfRotatePageComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<PdfRotatePageComponent, "pdf-rotate-page", never, { "showRotateButton": { "alias": "showRotateButton"; "required": false; }; "clockwise": { "alias": "clockwise"; "required": false; }; "counterClockwise": { "alias": "counterClockwise"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<PdfRotatePageComponent, "pdf-rotate-page", never, { "showRotateButton": "showRotateButton"; "clockwise": "clockwise"; "counterClockwise": "counterClockwise"; }, {}, never, never>;
 }

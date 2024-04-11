@@ -31,30 +31,21 @@ This library provides an embeddable PDF viewer component. It's different from ot
 
 Version 19 updates to pdf.js 4.0, and that means breaking changes. I hope most of you won't even notice it, but under the hood, there's a lot of change. So I decided to do a bold step and update ngx-extended-pdf-viewer to Angular 17.
 
-Version 19.5 also brings improved support for CSP (content security policy). Now the PDF viewer works with this CSP configuration:
-
-```
-Content-Security-Policy: base-uri 'self'; default-src mydomain.com 'nonce-{{nonce}}'
-```
-
 My promise of backward compatibility to roughly 3-4 version still holds, so I'm going to maintain version 18 for a while. I also hope that version 19 is compatible to Angular 14, 15, and 16, but at the moment, it's too early to promise anything.
 
 In a nutshell:
-
 - You're using Angular 16? Give ngx-extended-pdf-viewer 19 a try. My preliminary compatibility test indicates it's compatible. If it isn't, please tell me about it.
 - You're using Angular 15 or below? Stick to ngx-extended-pdf-viewer@18. But brace yourself for an update. Supporting two version simultaneously is painful to me, so I won't do this forever.
-- You've invested in the old i18n API, or you can't update because of a breaking change? Please tell me about your issue (for example, at https://github.com/stephanrauh/ngx-extended-pdf-viewer/discussions/1976).
+- You've invested in the old i18n API, or you can't update because of a breaking change? Please tell me about your issue (for example, at https://github.com/stephanrauh/ngx-extended-pdf-viewer/discussions/1976). 
 - You're using Angular 17 and can afford to start fresh? Go for version 19, including the alpha versions!
 
-Breaking change of version 19.3.0:
-Danny Tram kindly added a bugfix to the method `NgxExtendedPdfViewerService.hasPageBeenRendered()`. Strictly speaking it's a breaking change because previously the method did the exact opposite of what the name indicates. However, it's still a bug fix, so I've decided to increase the minor version number only.
-
 Breaking changes of version 19:
-
 - The attribute `useBrowserLocale` and the inlined translations are gone.
 - Many translation keys have changed. If you're using custom translations, you'll need to update them and to migrate to the FTL format.
 
 ### What's the difference between the stable and the bleeding-edge version of pdf.js?
+
+In November 2023, the pdf.js team have published version 4.0.269, but the developer version still has the version number 4.0.x. So I suspect verson 4.0.269 is an intermediate release.
 
 The bleeding edge branch is the latest developer version of pdf.js (usually one to three weeks behind). In theory, this means it might be buggy, but the pdf.js teams manage to deliver a remarkable high quality. Most of the bugs of the bleeding-edge version are my bugs, usually caused by merging, and that's also the reason why I maintain this branch. It helps me to spot bugs early. I'm always happy when people use the bleeding-edge branch and report errors, as long as you keep in mind it's not intended to be used in production.
 
@@ -68,8 +59,8 @@ Version 18 ships with quite a few improvements:
 - brings toolbar customization and responsive design to another level,
 - gives you the option to add many buttons to the toolbar that used to hide in the secondary menu,
 - adds more flexibility with for `[pageViewMode]`, `[scrollMode]`, and `[spreadMode]`,
-- and updates to pdf.js 3.10 in the stable branch and to pdf.js 3.11 in the bleeding-edge branch.
-- The bleeding-edge branch, in turn, gives you a sneak preview of the new "stamp" editor, which allows you to add images to PDF files.
+- and updates to pdf.js 3.10.
+- The bleeding-edge branch has been deleted in version 18.1.11. It will be back in version 19, but it doesn't make sense to maintain this branch in version 18 after starting the alpha phase of version 19.
 
 A slightly modified layout is a side-effect of the improvements of the toolbar and the secondary menu. Most people won't notice, but if you're using screenshot tests, expect them to break.
 
@@ -138,7 +129,7 @@ Would you like to participate in a popular open source-project? It's easy: just 
 - Responsive design that even includes your custom toolbars
 - Color theming
 
-Not to mention the ability to display PDF files, running on a customized version of Mozilla's pdf.js 4.0.269, released in late November 2023.
+Not to mention the ability to display PDF files, running on a customized version of Mozilla's pdf.js 3.10, released in late August 2023.
 
 ## Alternatives
 
@@ -164,7 +155,7 @@ Currently, the minimum required version is Angular 12. The idea is to support th
 2. There's an example component, but it isn't yet part of your application. You can either add the example component to your application or copy the relevant line to your HTML template:
 
 ```html
-<ngx-extended-pdf-viewer [src]="'assets/example.pdf'"></ngx-extended-pdf-viewer>
+<ngx-extended-pdf-viewer [src]="'assets/example.pdf'" useBrowserLocale="true"></ngx-extended-pdf-viewer>
 ```
 
 If you're running a non-standard configuration, have a look at <a href="https://pdfviewer.net/extended-pdf-viewer/getting-started">the getting-started page"</a> of the showcase.
@@ -178,6 +169,45 @@ Missing a configuration option? File an issue on the [project bug tracker](https
 ## Searching programmatically
 
 The service `NgxExtendedPdfViewerService` offers a programmatic API for searching, printing, dealing with layers, and scrolling within the page.
+
+## Internationalization
+
+<details>
+  <summary><b>Expand to learn how to translate ngx-extended-pdf-viewer to 120+ languages</b></summary>
+
+### Slow default way
+
+If you add the translation files to your project as described above in step 3, the PDF viewer uses the browser language setting to determine which language to load. First, it loads the `locale.properties,` scans it for the desired language files, and loads the language file from the corresponding folder. That's two additional HTTP calls.
+
+Don't forget to set the attribute `useBrowserLocale="true"` if you follow this approach.
+
+### Slow way with custom translation files
+
+If you want to use the slow way but prefer to load the language files from a different URL, add a link to your application like so:
+
+```html
+<link rel="resource" type="application/l10n" href="https://www.example.com/locale/locale.properties" />
+```
+
+In this case, don't set `useBrowserLocale` (or set it explicitly to false).
+
+### Inlining (aka embedding) the language files
+
+Alternatively, you can provide the translations as a Json file. This Json file has to be part of an HTML page. That's especially useful if you need only one or two languages. To get familiar with this approach, embed the Json file in the `index.html` like so:
+
+```html
+<script type="application/l10n">
+  {"default_locale":"de","locales":{"de": ... }}
+</script>
+```
+
+The folder `node_modules/ngx-extended-pdf-viewer/assets/inline-locale-files` contains snippet files you can copy into your HTML page.
+
+_Hint_: You can add the language definition in an arbitrary HTML file. The bottom line is that the HTML snippet is already part of the DOM when the PDF viewer is initialized. Cluttering the root index file with the translations is an ugly and inflexible hack, but it works.
+
+If you use the "inline" approach, don't set `useBrowserLocale` (or set it explicitly to `false`).
+
+</details>
 
 ## Troubleshooting
 

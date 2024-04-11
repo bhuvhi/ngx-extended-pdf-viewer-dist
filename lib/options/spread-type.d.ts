@@ -1,1 +1,1 @@
-export type SpreadType = 'off' | 'even' | 'odd';
+export declare type SpreadType = 'off' | 'even' | 'odd';

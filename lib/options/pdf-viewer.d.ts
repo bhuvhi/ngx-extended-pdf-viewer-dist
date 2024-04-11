@@ -1,4 +1,3 @@
-import { EditorAnnotation } from './editor-annotations';
 import { OptionalContentConfig } from './optional_content_config';
 import { PDFPageView } from './pdf_page_view';
 export declare enum ScrollModeType {
@@ -13,15 +12,38 @@ export declare enum SpreadModeType {
     ODD = 1,
     EVEN = 2
 }
-export type PageViewModeType = 'single' | 'book' | 'multiple' | 'infinite-scroll';
+export declare type PageViewModeType = 'single' | 'book' | 'multiple' | 'infinite-scroll';
 export interface ScrollModeChangedEvent {
     mode: ScrollModeType;
 }
 export interface IPDFRenderingQueue {
     getHighestPriority(visiblePage: Array<any>, pages: Array<any>, scrolledDown: boolean, preRenderExtra: boolean): any;
 }
+export declare type FreeTextEditorAnnotation = {
+    annotationType: 3;
+    color: Array<number>;
+    fontSize: number;
+    value: string;
+    pageIndex: number;
+    rect: Array<number>;
+    rotation: 0 | 90 | 180 | 270;
+};
+export declare type BezierPath = {
+    bezier: Array<number>;
+    points: Array<number>;
+};
+export declare type InkEditorAnnotation = {
+    annotationType: 15;
+    color: Array<number>;
+    thickness: number;
+    opacity: number;
+    paths: Array<BezierPath>;
+    pageIndex: number;
+    rect: Array<number>;
+    rotation: 0 | 90 | 180 | 270;
+};
+export declare type EditorAnnotation = InkEditorAnnotation | FreeTextEditorAnnotation;
 export interface IPDFViewer {
-    annotationEditorMode: any;
     currentPageLabel: string | undefined;
     currentPageNumber: number;
     currentScaleValue: string | number;
@@ -35,10 +57,10 @@ export interface IPDFViewer {
     addPageToRenderQueue(pageIndex: number): boolean;
     _getVisiblePages(): Array<any>;
     optionalContentConfigPromise: Promise<OptionalContentConfig> | null;
-    _scrollPageIntoView({ pageDiv, pageSpot, pageNumber }: {
-        pageDiv: HTMLElement;
+    _scrollPageIntoView({ pageDiv: HTMLElement, pageSpot: any, pageNumber: number }: {
+        pageDiv: any;
         pageSpot: any;
-        pageNumber: number;
+        pageNumber: any;
     }): void;
     getSerializedAnnotations(): EditorAnnotation[] | null;
     addEditorAnnotation(serialized: string | EditorAnnotation): void;

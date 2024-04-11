@@ -6,5 +6,5 @@ export declare class PdfFindButtonComponent {
     findbarVisible: boolean;
     onClick(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<PdfFindButtonComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<PdfFindButtonComponent, "pdf-find-button", never, { "showFindButton": { "alias": "showFindButton"; "required": false; }; "textLayer": { "alias": "textLayer"; "required": false; }; "findbarVisible": { "alias": "findbarVisible"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<PdfFindButtonComponent, "pdf-find-button", never, { "showFindButton": "showFindButton"; "textLayer": "textLayer"; "findbarVisible": "findbarVisible"; }, {}, never, never>;
 }

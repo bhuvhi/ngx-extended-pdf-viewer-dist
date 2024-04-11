@@ -16,6 +16,6 @@ export declare class PdfZoomDropdownComponent {
     private valueToZoomLevel;
     private snakeToCamel;
     static ɵfac: i0.ɵɵFactoryDeclaration<PdfZoomDropdownComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<PdfZoomDropdownComponent, "pdf-zoom-dropdown", never, { "zoomLevels": { "alias": "zoomLevels"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<PdfZoomDropdownComponent, "pdf-zoom-dropdown", never, { "zoomLevels": "zoomLevels"; }, {}, never, never>;
 }
 export {};

@@ -15,7 +15,7 @@ export interface ViewHistory {
 /**
  * Page text content.
  */
-export type TextContent = {
+export declare type TextContent = {
     /**
      * - Array of
      * {@link TextItem } and {@link TextMarkedContent } objects. TextMarkedContent
@@ -106,7 +106,7 @@ export interface PDFWorker {
 /**
  * Document initialization / loading parameters object.
  */
-export type DocumentInitParameters = {
+export declare type DocumentInitParameters = {
     /**
      * - The URL of the PDF.
      */
@@ -291,7 +291,7 @@ export type DocumentInitParameters = {
      */
     pdfBug: boolean | undefined;
 };
-export type OnProgressParameters = {
+export declare type OnProgressParameters = {
     /**
      * - Currently loaded number of bytes.
      */
@@ -304,7 +304,7 @@ export type OnProgressParameters = {
 /**
  * Page annotation parameters.
  */
-export type GetAnnotationsParameters = {
+export declare type GetAnnotationsParameters = {
     /**
      * - Determines the annotations that are fetched,
      * can be 'display' (viewable annotations), 'print' (printable annotations),
@@ -312,7 +312,7 @@ export type GetAnnotationsParameters = {
      */
     intent: string | undefined;
 };
-export type TextItem = {
+export declare type TextItem = {
     /**
      * - Text content.
      */
@@ -346,7 +346,7 @@ export type TextItem = {
 /**
  * Page text marked content part.
  */
-export type TextMarkedContent = {
+export declare type TextMarkedContent = {
     /**
      * - Either 'beginMarkedContent',
      * 'beginMarkedContentProps', or 'endMarkedContent'.
@@ -391,14 +391,14 @@ declare interface PDFObjects {
     resolve(objId: string, data?: any): void;
     clear(): void;
 }
-export type RefProxy = {
+export declare type RefProxy = {
     num: number;
     gen: number;
 };
 /**
  * Page getViewport parameters.
  */
-export type GetViewportParameters = {
+export declare type GetViewportParameters = {
     /**
      * - The desired scale of the viewport.
      */
@@ -429,7 +429,7 @@ export interface PDFDateString {
 /**
  * Page getTextContent parameters.
  */
-export type getTextContentParameters = {
+export declare type getTextContentParameters = {
     /**
      * - Do not attempt to combine
      * same line {@link TextItem }'s. The default value is `false`.
@@ -474,7 +474,7 @@ export interface RenderTask {
 /**
  * Page render parameters.
  */
-export type RenderParameters = {
+export declare type RenderParameters = {
     /**
      * - A 2D context of a DOM Canvas object.
      */
@@ -543,7 +543,7 @@ export type RenderParameters = {
 /**
  * Structure tree node. The root node will have a role "Root".
  */
-export type StructTreeNode = {
+export declare type StructTreeNode = {
     /**
      * - Array of
      * {@link StructTreeNode } and {@link StructTreeContent } objects.
@@ -558,7 +558,7 @@ export type StructTreeNode = {
 /**
  * Structure tree content.
  */
-export type StructTreeContent = {
+export declare type StructTreeContent = {
     /**
      * - either "content" for page and stream structure
      * elements or "object" for object references.
@@ -604,7 +604,7 @@ export interface PDFPageProxy {
      * @returns {PageViewport} Contains 'width' and 'height' properties
      *   along with transforms required for rendering.
      */
-    getViewport({ scale, rotation, offsetX, offsetY, dontFlip }: GetViewportParameters): PageViewport;
+    getViewport({ scale, rotation, offsetX, offsetY, dontFlip }?: GetViewportParameters): PageViewport;
     /**
      * @param {GetAnnotationsParameters} params - Annotation parameters.
      * @returns {Promise<Array<any>>} A promise that is resolved with an

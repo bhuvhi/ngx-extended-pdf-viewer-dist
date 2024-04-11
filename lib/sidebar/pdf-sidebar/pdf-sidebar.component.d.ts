@@ -16,5 +16,5 @@ export declare class PdfSidebarComponent {
     constructor(elementRef: ElementRef, ref: ChangeDetectorRef);
     showToolbarWhenNecessary(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<PdfSidebarComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<PdfSidebarComponent, "pdf-sidebar", never, { "sidebarPositionTop": { "alias": "sidebarPositionTop"; "required": false; }; "sidebarVisible": { "alias": "sidebarVisible"; "required": false; }; "mobileFriendlyZoomScale": { "alias": "mobileFriendlyZoomScale"; "required": false; }; "showSidebarButton": { "alias": "showSidebarButton"; "required": false; }; "customSidebar": { "alias": "customSidebar"; "required": false; }; "customThumbnail": { "alias": "customThumbnail"; "required": false; }; }, { "thumbnailDrawn": "thumbnailDrawn"; }, never, ["*"], false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<PdfSidebarComponent, "pdf-sidebar", never, { "sidebarPositionTop": "sidebarPositionTop"; "sidebarVisible": "sidebarVisible"; "mobileFriendlyZoomScale": "mobileFriendlyZoomScale"; "showSidebarButton": "showSidebarButton"; "customSidebar": "customSidebar"; "customThumbnail": "customThumbnail"; }, { "thumbnailDrawn": "thumbnailDrawn"; }, never, ["*"]>;
 }

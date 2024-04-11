@@ -7,5 +7,5 @@ export declare class PdfToggleSecondaryToolbarComponent {
     constructor(service: NgxExtendedPdfViewerService);
     onClick(event: Event): boolean;
     static ɵfac: i0.ɵɵFactoryDeclaration<PdfToggleSecondaryToolbarComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<PdfToggleSecondaryToolbarComponent, "pdf-toggle-secondary-toolbar", never, { "showSecondaryToolbarButton": { "alias": "showSecondaryToolbarButton"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<PdfToggleSecondaryToolbarComponent, "pdf-toggle-secondary-toolbar", never, { "showSecondaryToolbarButton": "showSecondaryToolbarButton"; }, {}, never, never>;
 }

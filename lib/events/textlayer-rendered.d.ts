@@ -1,5 +1,5 @@
 import { PDFPageView } from '../options/pdf_page_view';
-export type PageViewportParameters = {
+export declare type PageViewportParameters = {
     /**
      * - The xMin, yMin, xMax and
      * yMax coordinates.

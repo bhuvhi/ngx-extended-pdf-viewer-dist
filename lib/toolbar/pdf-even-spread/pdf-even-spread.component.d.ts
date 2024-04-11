@@ -14,5 +14,5 @@ export declare class PdfEvenSpreadComponent {
     onPdfJsInit(): void;
     onClick(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<PdfEvenSpreadComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<PdfEvenSpreadComponent, "pdf-even-spread", never, { "show": { "alias": "show"; "required": false; }; "scrollMode": { "alias": "scrollMode"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<PdfEvenSpreadComponent, "pdf-even-spread", never, { "show": "show"; "scrollMode": "scrollMode"; }, {}, never, never>;
 }

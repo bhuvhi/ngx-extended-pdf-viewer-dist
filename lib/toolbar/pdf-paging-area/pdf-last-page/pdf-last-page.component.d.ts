@@ -12,5 +12,5 @@ export declare class PdfLastPageComponent {
     updateUIState(event: UpdateUIStateEvent): void;
     lastPage(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<PdfLastPageComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<PdfLastPageComponent, "pdf-last-page", never, {}, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<PdfLastPageComponent, "pdf-last-page", never, {}, {}, never, never>;
 }

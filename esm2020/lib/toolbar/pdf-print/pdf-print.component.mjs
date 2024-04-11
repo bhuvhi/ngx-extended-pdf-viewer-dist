@@ -1,0 +1,23 @@
+import { Component, Input } from '@angular/core';
+import * as i0 from "@angular/core";
+import * as i1 from "../pdf-shy-button/pdf-shy-button.component";
+import * as i2 from "../../responsive-visibility";
+export class PdfPrintComponent {
+    constructor() {
+        this.showPrintButton = true;
+    }
+}
+/** @nocollapse */ PdfPrintComponent.ɵfac = function PdfPrintComponent_Factory(t) { return new (t || PdfPrintComponent)(); };
+/** @nocollapse */ PdfPrintComponent.ɵcmp = /** @pureOrBreakMyCode */ i0.ɵɵdefineComponent({ type: PdfPrintComponent, selectors: [["pdf-print"]], inputs: { showPrintButton: "showPrintButton" }, decls: 2, vars: 5, consts: [["primaryToolbarId", "print", "title", "Print", "l10nId", "print", "l10nLabel", "print", "image", "<svg style='width: 22px; height: 22px' viewBox='0 0 24 24'><path fill='currentColor' d='M18,3H6V7H18M19,12A1,1 0 0,1 18,11A1,1 0 0,1 19,10A1,1 0 0,1 20,11A1,1 0 0,1 19,12M16,19H8V14H16M19,8H5A3,3 0 0,0 2,11V17H6V21H18V17H22V11A3,3 0 0,0 19,8Z' /></svg>", 3, "cssClass", "order"]], template: function PdfPrintComponent_Template(rf, ctx) { if (rf & 1) {
+        i0.ɵɵelement(0, "pdf-shy-button", 0);
+        i0.ɵɵpipe(1, "responsiveCSSClass");
+    } if (rf & 2) {
+        i0.ɵɵproperty("cssClass", i0.ɵɵpipeBind2(1, 2, ctx.showPrintButton, "hiddenSmallView"))("order", 300);
+    } }, directives: [i1.PdfShyButtonComponent], pipes: [i2.ResponsiveCSSClassPipe], styles: ["[_nghost-%COMP%]:focus{outline:none}button[_ngcontent-%COMP%]:focus{outline:none}svg[_ngcontent-%COMP%]:focus{outline:none}button[_ngcontent-%COMP%]{padding:0;margin-top:0;margin-bottom:0}"] });
+(function () { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(PdfPrintComponent, [{
+        type: Component,
+        args: [{ selector: 'pdf-print', template: "<pdf-shy-button\r\n  primaryToolbarId=\"print\"\r\n  [cssClass]=\"showPrintButton | responsiveCSSClass : 'hiddenSmallView'\"\r\n  title=\"Print\"\r\n  l10nId=\"print\"\r\n  l10nLabel=\"print\"\r\n  [order]=\"300\"\r\n  image=\"<svg style='width: 22px; height: 22px' viewBox='0 0 24 24'><path fill='currentColor' d='M18,3H6V7H18M19,12A1,1 0 0,1 18,11A1,1 0 0,1 19,10A1,1 0 0,1 20,11A1,1 0 0,1 19,12M16,19H8V14H16M19,8H5A3,3 0 0,0 2,11V17H6V21H18V17H22V11A3,3 0 0,0 19,8Z' /></svg>\"\r\n>\r\n</pdf-shy-button>\r\n", styles: [":host:focus{outline:none}button:focus{outline:none}svg:focus{outline:none}button{padding:0;margin-top:0;margin-bottom:0}\n"] }]
+    }], null, { showPrintButton: [{
+            type: Input
+        }] }); })();
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicGRmLXByaW50LmNvbXBvbmVudC5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uLy4uLy4uL3Byb2plY3RzL25neC1leHRlbmRlZC1wZGYtdmlld2VyL3NyYy9saWIvdG9vbGJhci9wZGYtcHJpbnQvcGRmLXByaW50LmNvbXBvbmVudC50cyIsIi4uLy4uLy4uLy4uLy4uLy4uL3Byb2plY3RzL25neC1leHRlbmRlZC1wZGYtdmlld2VyL3NyYy9saWIvdG9vbGJhci9wZGYtcHJpbnQvcGRmLXByaW50LmNvbXBvbmVudC5odG1sIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLE9BQU8sRUFBRSxTQUFTLEVBQUUsS0FBSyxFQUFFLE1BQU0sZUFBZSxDQUFDOzs7O0FBUWpELE1BQU0sT0FBTyxpQkFBaUI7SUFMOUI7UUFPUyxvQkFBZSxHQUF5QixJQUFJLENBQUM7S0FDckQ7O3FHQUhZLGlCQUFpQjttR0FBakIsaUJBQWlCO1FDUjlCLG9DQVNpQjs7O1FBUGYsdUZBQXFFLGNBQUE7O3VGRE0xRCxpQkFBaUI7Y0FMN0IsU0FBUzsyQkFDRSxXQUFXO2dCQU1kLGVBQWU7a0JBRHJCLEtBQUsiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBDb21wb25lbnQsIElucHV0IH0gZnJvbSAnQGFuZ3VsYXIvY29yZSc7XHJcbmltcG9ydCB7IFJlc3BvbnNpdmVWaXNpYmlsaXR5IH0gZnJvbSAnLi4vLi4vcmVzcG9uc2l2ZS12aXNpYmlsaXR5JztcclxuXHJcbkBDb21wb25lbnQoe1xyXG4gIHNlbGVjdG9yOiAncGRmLXByaW50JyxcclxuICB0ZW1wbGF0ZVVybDogJy4vcGRmLXByaW50LmNvbXBvbmVudC5odG1sJyxcclxuICBzdHlsZVVybHM6IFsnLi9wZGYtcHJpbnQuY29tcG9uZW50LmNzcyddLFxyXG59KVxyXG5leHBvcnQgY2xhc3MgUGRmUHJpbnRDb21wb25lbnQge1xyXG4gIEBJbnB1dCgpXHJcbiAgcHVibGljIHNob3dQcmludEJ1dHRvbjogUmVzcG9uc2l2ZVZpc2liaWxpdHkgPSB0cnVlO1xyXG59XHJcbiIsIjxwZGYtc2h5LWJ1dHRvblxyXG4gIHByaW1hcnlUb29sYmFySWQ9XCJwcmludFwiXHJcbiAgW2Nzc0NsYXNzXT1cInNob3dQcmludEJ1dHRvbiB8IHJlc3BvbnNpdmVDU1NDbGFzcyA6ICdoaWRkZW5TbWFsbFZpZXcnXCJcclxuICB0aXRsZT1cIlByaW50XCJcclxuICBsMTBuSWQ9XCJwcmludFwiXHJcbiAgbDEwbkxhYmVsPVwicHJpbnRcIlxyXG4gIFtvcmRlcl09XCIzMDBcIlxyXG4gIGltYWdlPVwiPHN2ZyBzdHlsZT0nd2lkdGg6IDIycHg7IGhlaWdodDogMjJweCcgdmlld0JveD0nMCAwIDI0IDI0Jz48cGF0aCBmaWxsPSdjdXJyZW50Q29sb3InIGQ9J00xOCwzSDZWN0gxOE0xOSwxMkExLDEgMCAwLDEgMTgsMTFBMSwxIDAgMCwxIDE5LDEwQTEsMSAwIDAsMSAyMCwxMUExLDEgMCAwLDEgMTksMTJNMTYsMTlIOFYxNEgxNk0xOSw4SDVBMywzIDAgMCwwIDIsMTFWMTdINlYyMUgxOFYxN0gyMlYxMUEzLDMgMCAwLDAgMTksOFonIC8+PC9zdmc+XCJcclxuPlxyXG48L3BkZi1zaHktYnV0dG9uPlxyXG4iXX0=

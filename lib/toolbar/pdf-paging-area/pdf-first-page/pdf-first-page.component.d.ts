@@ -13,5 +13,5 @@ export declare class PdfFirstPageComponent {
     onPdfJsInit(): void;
     updateUIState(event: UpdateUIStateEvent): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<PdfFirstPageComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<PdfFirstPageComponent, "pdf-first-page", never, { "show": { "alias": "show"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<PdfFirstPageComponent, "pdf-first-page", never, { "show": "show"; }, {}, never, never>;
 }

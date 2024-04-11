@@ -1,0 +1,15 @@
+import { Component } from '@angular/core';
+import * as i0 from "@angular/core";
+export class PdfSearchInputFieldComponent {
+}
+/** @nocollapse */ PdfSearchInputFieldComponent.ɵfac = function PdfSearchInputFieldComponent_Factory(t) { return new (t || PdfSearchInputFieldComponent)(); };
+/** @nocollapse */ PdfSearchInputFieldComponent.ɵcmp = /** @pureOrBreakMyCode */ i0.ɵɵdefineComponent({ type: PdfSearchInputFieldComponent, selectors: [["pdf-search-input-field"]], decls: 1, vars: 1, consts: [["autocomplete", "off", "id", "findInput", "title", "Find", "data-l10n-id", "find_input", "name", "search-input-field", 1, "toolbarField", 3, "placeholder"]], template: function PdfSearchInputFieldComponent_Template(rf, ctx) { if (rf & 1) {
+        i0.ɵɵelement(0, "input", 0);
+    } if (rf & 2) {
+        i0.ɵɵproperty("placeholder", "Find in document\u2026");
+    } }, styles: ["textarea[_ngcontent-%COMP%]{width:200px;height:3.5em}textarea[_ngcontent-%COMP%]::placeholder{font-style:italic}"] });
+(function () { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(PdfSearchInputFieldComponent, [{
+        type: Component,
+        args: [{ selector: 'pdf-search-input-field', template: "<input\r\n  autocomplete=\"off\"\r\n  id=\"findInput\"\r\n  class=\"toolbarField\"\r\n  title=\"Find\"\r\n  [placeholder]=\"'Find in document\u2026'\"\r\n  data-l10n-id=\"find_input\"\r\n  name=\"search-input-field\"\r\n/>\r\n", styles: ["textarea{width:200px;height:3.5em}textarea::placeholder{font-style:italic}\n"] }]
+    }], null, null); })();
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicGRmLXNlYXJjaC1pbnB1dC1maWVsZC5jb21wb25lbnQuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi8uLi8uLi8uLi8uLi9wcm9qZWN0cy9uZ3gtZXh0ZW5kZWQtcGRmLXZpZXdlci9zcmMvbGliL3Rvb2xiYXIvcGRmLWZpbmRiYXIvcGRmLXNlYXJjaC1pbnB1dC1maWVsZC9wZGYtc2VhcmNoLWlucHV0LWZpZWxkLmNvbXBvbmVudC50cyIsIi4uLy4uLy4uLy4uLy4uLy4uLy4uL3Byb2plY3RzL25neC1leHRlbmRlZC1wZGYtdmlld2VyL3NyYy9saWIvdG9vbGJhci9wZGYtZmluZGJhci9wZGYtc2VhcmNoLWlucHV0LWZpZWxkL3BkZi1zZWFyY2gtaW5wdXQtZmllbGQuY29tcG9uZW50Lmh0bWwiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsT0FBTyxFQUFFLFNBQVMsRUFBRSxNQUFNLGVBQWUsQ0FBQzs7QUFPMUMsTUFBTSxPQUFPLDRCQUE0Qjs7MkhBQTVCLDRCQUE0Qjs4R0FBNUIsNEJBQTRCO1FDUHpDLDJCQVFFOztRQUhBLHNEQUFtQzs7dUZERXhCLDRCQUE0QjtjQUx4QyxTQUFTOzJCQUNFLHdCQUF3QiIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IENvbXBvbmVudCB9IGZyb20gJ0Bhbmd1bGFyL2NvcmUnO1xyXG5cclxuQENvbXBvbmVudCh7XHJcbiAgc2VsZWN0b3I6ICdwZGYtc2VhcmNoLWlucHV0LWZpZWxkJyxcclxuICB0ZW1wbGF0ZVVybDogJy4vcGRmLXNlYXJjaC1pbnB1dC1maWVsZC5jb21wb25lbnQuaHRtbCcsXHJcbiAgc3R5bGVVcmxzOiBbJy4vcGRmLXNlYXJjaC1pbnB1dC1maWVsZC5jb21wb25lbnQuY3NzJ10sXHJcbn0pXHJcbmV4cG9ydCBjbGFzcyBQZGZTZWFyY2hJbnB1dEZpZWxkQ29tcG9uZW50IHt9XHJcbiIsIjxpbnB1dFxyXG4gIGF1dG9jb21wbGV0ZT1cIm9mZlwiXHJcbiAgaWQ9XCJmaW5kSW5wdXRcIlxyXG4gIGNsYXNzPVwidG9vbGJhckZpZWxkXCJcclxuICB0aXRsZT1cIkZpbmRcIlxyXG4gIFtwbGFjZWhvbGRlcl09XCInRmluZCBpbiBkb2N1bWVudOKApidcIlxyXG4gIGRhdGEtbDEwbi1pZD1cImZpbmRfaW5wdXRcIlxyXG4gIG5hbWU9XCJzZWFyY2gtaW5wdXQtZmllbGRcIlxyXG4vPlxyXG4iXX0=

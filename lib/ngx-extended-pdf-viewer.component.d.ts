@@ -16,7 +16,6 @@ import { PDFDocumentProxy } from './options/pdf-viewer-application';
 import { VerbosityLevel } from './options/verbosity-level';
 import { PdfDummyComponentsComponent } from './pdf-dummy-components/pdf-dummy-components.component';
 import { PDFNotificationService } from './pdf-notification-service';
-import { AnnotationEditorEvent } from './events/annotation-editor-layer-event';
 import { AnnotationEditorLayerRenderedEvent } from './events/annotation-editor-layer-rendered-event';
 import { AnnotationEditorEditorModeChangedEvent } from './events/annotation-editor-mode-changed-event';
 import { AnnotationLayerRenderedEvent } from './events/annotation-layer-rendered-event';
@@ -26,7 +25,6 @@ import { OutlineLoadedEvent } from './events/outline-loaded-event';
 import { XfaLayerRenderedEvent } from './events/xfa-layer-rendered-event';
 import { PdfSidebarView } from './options/pdf-sidebar-views';
 import { SpreadType } from './options/spread-type';
-import { PdfCspPolicyService } from './pdf-csp-policy.service';
 import { ResponsiveVisibility } from './responsive-visibility';
 import * as i0 from "@angular/core";
 export interface FormDataType {
@@ -42,7 +40,6 @@ export declare class NgxExtendedPdfViewerComponent implements OnInit, AfterViewI
     private cdr;
     service: NgxExtendedPdfViewerService;
     private renderer;
-    private pdfCspPolicyService;
     private static originalPrint;
     ngxExtendedPdfViewerIncompletelyInitialized: boolean;
     private formSupport;
@@ -53,7 +50,6 @@ export declare class NgxExtendedPdfViewerComponent implements OnInit, AfterViewI
      */
     dummyComponents: PdfDummyComponentsComponent;
     root: ElementRef;
-    annotationEditorEvent: EventEmitter<AnnotationEditorEvent>;
     customFindbarInputArea: TemplateRef<any> | undefined;
     customToolbar: TemplateRef<any> | undefined;
     customFindbar: TemplateRef<any> | undefined;
@@ -104,7 +100,6 @@ export declare class NgxExtendedPdfViewerComponent implements OnInit, AfterViewI
     showTextEditor: ResponsiveVisibility;
     showStampEditor: ResponsiveVisibility;
     showDrawEditor: ResponsiveVisibility;
-    showHighlightEditor: ResponsiveVisibility;
     /** store the timeout id so it can be canceled if user leaves the page before the PDF is shown */
     private initTimeout;
     /** How many log messages should be printed?
@@ -112,9 +107,7 @@ export declare class NgxExtendedPdfViewerComponent implements OnInit, AfterViewI
     logLevel: VerbosityLevel;
     relativeCoordsOptions: Object;
     /** Use the minified (minifiedJSLibraries="true", which is the default) or the user-readable pdf.js library (minifiedJSLibraries="false") */
-    private _minifiedJSLibraries;
-    get minifiedJSLibraries(): boolean;
-    set minifiedJSLibraries(value: boolean);
+    minifiedJSLibraries: boolean;
     primaryMenuVisible: boolean;
     /** option to increase (or reduce) print resolution. Default is 150 (dpi). Sensible values
      * are 300, 600, and 1200. Note the increase memory consumption, which may even result in a browser crash. */
@@ -141,6 +134,14 @@ export declare class NgxExtendedPdfViewerComponent implements OnInit, AfterViewI
     private _height;
     set height(h: string | undefined);
     get height(): string | undefined;
+    private _useBrowserLocale;
+    get useBrowserLocale(): boolean;
+    /**
+     * If this flag is true, this components adds a link to the locale assets. The pdf viewer
+     * sees this link and uses it to load the locale files automatically.
+     * @param useBrowserLocale boolean
+     */
+    set useBrowserLocale(value: boolean);
     forceUsingLegacyES5: boolean;
     backgroundColor: string;
     /** Allows the user to define the name of the file after clicking "download" */
@@ -210,9 +211,7 @@ export declare class NgxExtendedPdfViewerComponent implements OnInit, AfterViewI
     showWrappedScrollButton: ResponsiveVisibility;
     showInfiniteScrollButton: ResponsiveVisibility;
     showBookModeButton: ResponsiveVisibility;
-    set showRotateButton(visibility: ResponsiveVisibility);
-    showRotateCwButton: ResponsiveVisibility;
-    showRotateCcwButton: ResponsiveVisibility;
+    showRotateButton: ResponsiveVisibility;
     private _handTool;
     set handTool(handTool: boolean);
     get handTool(): boolean;
@@ -276,7 +275,7 @@ export declare class NgxExtendedPdfViewerComponent implements OnInit, AfterViewI
     private shuttingDown;
     serverSideRendering: boolean;
     calcViewerPositionTop(): void;
-    constructor(ngZone: NgZone, platformId: any, notificationService: PDFNotificationService, location: Location, elementRef: ElementRef, platformLocation: PlatformLocation, cdr: ChangeDetectorRef, service: NgxExtendedPdfViewerService, renderer: Renderer2, pdfCspPolicyService: PdfCspPolicyService);
+    constructor(ngZone: NgZone, platformId: any, notificationService: PDFNotificationService, location: Location, elementRef: ElementRef, platformLocation: PlatformLocation, cdr: ChangeDetectorRef, service: NgxExtendedPdfViewerService, renderer: Renderer2);
     private iOSVersionRequiresES5;
     private needsES5;
     private supportsOptionalChaining;
@@ -302,7 +301,6 @@ export declare class NgxExtendedPdfViewerComponent implements OnInit, AfterViewI
     private activateTextlayerIfNecessary;
     private overrideDefaultSettings;
     private openPDF;
-    private registerEventListeners;
     private removeScrollbarInInfiniteScrollMode;
     openPDF2(): Promise<void>;
     private selectCursorTool;
@@ -316,5 +314,5 @@ export declare class NgxExtendedPdfViewerComponent implements OnInit, AfterViewI
     zoomToPageWidth(event: MouseEvent): Promise<void>;
     private enableOrDisableForms;
     static ɵfac: i0.ɵɵFactoryDeclaration<NgxExtendedPdfViewerComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<NgxExtendedPdfViewerComponent, "ngx-extended-pdf-viewer", never, { "customFindbarInputArea": { "alias": "customFindbarInputArea"; "required": false; }; "customToolbar": { "alias": "customToolbar"; "required": false; }; "customFindbar": { "alias": "customFindbar"; "required": false; }; "customFindbarButtons": { "alias": "customFindbarButtons"; "required": false; }; "customPdfViewer": { "alias": "customPdfViewer"; "required": false; }; "customSecondaryToolbar": { "alias": "customSecondaryToolbar"; "required": false; }; "customSidebar": { "alias": "customSidebar"; "required": false; }; "customThumbnail": { "alias": "customThumbnail"; "required": false; }; "customFreeFloatingBar": { "alias": "customFreeFloatingBar"; "required": false; }; "showFreeFloatingBar": { "alias": "showFreeFloatingBar"; "required": false; }; "enableDragAndDrop": { "alias": "enableDragAndDrop"; "required": false; }; "formData": { "alias": "formData"; "required": false; }; "disableForms": { "alias": "disableForms"; "required": false; }; "pageViewMode": { "alias": "pageViewMode"; "required": false; }; "scrollMode": { "alias": "scrollMode"; "required": false; }; "authorization": { "alias": "authorization"; "required": false; }; "httpHeaders": { "alias": "httpHeaders"; "required": false; }; "contextMenuAllowed": { "alias": "contextMenuAllowed"; "required": false; }; "enablePrint": { "alias": "enablePrint"; "required": false; }; "delayFirstView": { "alias": "delayFirstView"; "required": false; }; "showTextEditor": { "alias": "showTextEditor"; "required": false; }; "showStampEditor": { "alias": "showStampEditor"; "required": false; }; "showDrawEditor": { "alias": "showDrawEditor"; "required": false; }; "showHighlightEditor": { "alias": "showHighlightEditor"; "required": false; }; "logLevel": { "alias": "logLevel"; "required": false; }; "relativeCoordsOptions": { "alias": "relativeCoordsOptions"; "required": false; }; "minifiedJSLibraries": { "alias": "minifiedJSLibraries"; "required": false; }; "printResolution": { "alias": "printResolution"; "required": false; }; "rotation": { "alias": "rotation"; "required": false; }; "src": { "alias": "src"; "required": false; }; "base64Src": { "alias": "base64Src"; "required": false; }; "minHeight": { "alias": "minHeight"; "required": false; }; "height": { "alias": "height"; "required": false; }; "forceUsingLegacyES5": { "alias": "forceUsingLegacyES5"; "required": false; }; "backgroundColor": { "alias": "backgroundColor"; "required": false; }; "filenameForDownload": { "alias": "filenameForDownload"; "required": false; }; "ignoreKeyboard": { "alias": "ignoreKeyboard"; "required": false; }; "ignoreKeys": { "alias": "ignoreKeys"; "required": false; }; "acceptKeys": { "alias": "acceptKeys"; "required": false; }; "imageResourcesPath": { "alias": "imageResourcesPath"; "required": false; }; "localeFolderPath": { "alias": "localeFolderPath"; "required": false; }; "language": { "alias": "language"; "required": false; }; "listenToURL": { "alias": "listenToURL"; "required": false; }; "nameddest": { "alias": "nameddest"; "required": false; }; "password": { "alias": "password"; "required": false; }; "replaceBrowserPrint": { "alias": "replaceBrowserPrint"; "required": false; }; "showUnverifiedSignatures": { "alias": "showUnverifiedSignatures"; "required": false; }; "startTabindex": { "alias": "startTabindex"; "required": false; }; "showSidebarButton": { "alias": "showSidebarButton"; "required": false; }; "sidebarVisible": { "alias": "sidebarVisible"; "required": false; }; "activeSidebarView": { "alias": "activeSidebarView"; "required": false; }; "findbarVisible": { "alias": "findbarVisible"; "required": false; }; "propertiesDialogVisible": { "alias": "propertiesDialogVisible"; "required": false; }; "showFindButton": { "alias": "showFindButton"; "required": false; }; "showFindHighlightAll": { "alias": "showFindHighlightAll"; "required": false; }; "showFindMatchCase": { "alias": "showFindMatchCase"; "required": false; }; "showFindCurrentPageOnly": { "alias": "showFindCurrentPageOnly"; "required": false; }; "showFindPageRange": { "alias": "showFindPageRange"; "required": false; }; "showFindEntireWord": { "alias": "showFindEntireWord"; "required": false; }; "showFindEntirePhrase": { "alias": "showFindEntirePhrase"; "required": false; }; "showFindMatchDiacritics": { "alias": "showFindMatchDiacritics"; "required": false; }; "showFindFuzzySearch": { "alias": "showFindFuzzySearch"; "required": false; }; "showFindResultsCount": { "alias": "showFindResultsCount"; "required": false; }; "showFindMessages": { "alias": "showFindMessages"; "required": false; }; "showPagingButtons": { "alias": "showPagingButtons"; "required": false; }; "showZoomButtons": { "alias": "showZoomButtons"; "required": false; }; "showPresentationModeButton": { "alias": "showPresentationModeButton"; "required": false; }; "showOpenFileButton": { "alias": "showOpenFileButton"; "required": false; }; "showPrintButton": { "alias": "showPrintButton"; "required": false; }; "showDownloadButton": { "alias": "showDownloadButton"; "required": false; }; "theme": { "alias": "theme"; "required": false; }; "showToolbar": { "alias": "showToolbar"; "required": false; }; "showSecondaryToolbarButton": { "alias": "showSecondaryToolbarButton"; "required": false; }; "showSinglePageModeButton": { "alias": "showSinglePageModeButton"; "required": false; }; "showVerticalScrollButton": { "alias": "showVerticalScrollButton"; "required": false; }; "showHorizontalScrollButton": { "alias": "showHorizontalScrollButton"; "required": false; }; "showWrappedScrollButton": { "alias": "showWrappedScrollButton"; "required": false; }; "showInfiniteScrollButton": { "alias": "showInfiniteScrollButton"; "required": false; }; "showBookModeButton": { "alias": "showBookModeButton"; "required": false; }; "showRotateButton": { "alias": "showRotateButton"; "required": false; }; "showRotateCwButton": { "alias": "showRotateCwButton"; "required": false; }; "showRotateCcwButton": { "alias": "showRotateCcwButton"; "required": false; }; "handTool": { "alias": "handTool"; "required": false; }; "showHandToolButton": { "alias": "showHandToolButton"; "required": false; }; "showScrollingButton": { "alias": "showScrollingButton"; "required": false; }; "showSpreadButton": { "alias": "showSpreadButton"; "required": false; }; "showPropertiesButton": { "alias": "showPropertiesButton"; "required": false; }; "showBorders": { "alias": "showBorders"; "required": false; }; "spread": { "alias": "spread"; "required": false; }; "page": { "alias": "page"; "required": false; }; "pageLabel": { "alias": "pageLabel"; "required": false; }; "textLayer": { "alias": "textLayer"; "required": false; }; "zoom": { "alias": "zoom"; "required": false; }; "zoomLevels": { "alias": "zoomLevels"; "required": false; }; "maxZoom": { "alias": "maxZoom"; "required": false; }; "minZoom": { "alias": "minZoom"; "required": false; }; "mobileFriendlyZoom": { "alias": "mobileFriendlyZoom"; "required": false; }; }, { "annotationEditorEvent": "annotationEditorEvent"; "formDataChange": "formDataChange"; "pageViewModeChange": "pageViewModeChange"; "progress": "progress"; "srcChange": "srcChange"; "scrollModeChange": "scrollModeChange"; "afterPrint": "afterPrint"; "beforePrint": "beforePrint"; "currentZoomFactor": "currentZoomFactor"; "rotationChange": "rotationChange"; "annotationLayerRendered": "annotationLayerRendered"; "annotationEditorLayerRendered": "annotationEditorLayerRendered"; "xfaLayerRendered": "xfaLayerRendered"; "outlineLoaded": "outlineLoaded"; "attachmentsloaded": "attachmentsloaded"; "layersloaded": "layersloaded"; "sidebarVisibleChange": "sidebarVisibleChange"; "activeSidebarViewChange": "activeSidebarViewChange"; "findbarVisibleChange": "findbarVisibleChange"; "propertiesDialogVisibleChange": "propertiesDialogVisibleChange"; "handToolChange": "handToolChange"; "spreadChange": "spreadChange"; "thumbnailDrawn": "thumbnailDrawn"; "pageChange": "pageChange"; "pageLabelChange": "pageLabelChange"; "pagesLoaded": "pagesLoaded"; "pageRender": "pageRender"; "pageRendered": "pageRendered"; "pdfDownloaded": "pdfDownloaded"; "pdfLoaded": "pdfLoaded"; "pdfLoadingStarts": "pdfLoadingStarts"; "pdfLoadingFailed": "pdfLoadingFailed"; "textLayerRendered": "textLayerRendered"; "annotationEditorModeChanged": "annotationEditorModeChanged"; "updateFindMatchesCount": "updateFindMatchesCount"; "updateFindState": "updateFindState"; "zoomChange": "zoomChange"; }, never, ["*", "*"], false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NgxExtendedPdfViewerComponent, "ngx-extended-pdf-viewer", never, { "customFindbarInputArea": "customFindbarInputArea"; "customToolbar": "customToolbar"; "customFindbar": "customFindbar"; "customFindbarButtons": "customFindbarButtons"; "customPdfViewer": "customPdfViewer"; "customSecondaryToolbar": "customSecondaryToolbar"; "customSidebar": "customSidebar"; "customThumbnail": "customThumbnail"; "customFreeFloatingBar": "customFreeFloatingBar"; "showFreeFloatingBar": "showFreeFloatingBar"; "enableDragAndDrop": "enableDragAndDrop"; "formData": "formData"; "disableForms": "disableForms"; "pageViewMode": "pageViewMode"; "scrollMode": "scrollMode"; "authorization": "authorization"; "httpHeaders": "httpHeaders"; "contextMenuAllowed": "contextMenuAllowed"; "enablePrint": "enablePrint"; "delayFirstView": "delayFirstView"; "showTextEditor": "showTextEditor"; "showStampEditor": "showStampEditor"; "showDrawEditor": "showDrawEditor"; "logLevel": "logLevel"; "relativeCoordsOptions": "relativeCoordsOptions"; "minifiedJSLibraries": "minifiedJSLibraries"; "printResolution": "printResolution"; "rotation": "rotation"; "src": "src"; "base64Src": "base64Src"; "minHeight": "minHeight"; "height": "height"; "useBrowserLocale": "useBrowserLocale"; "forceUsingLegacyES5": "forceUsingLegacyES5"; "backgroundColor": "backgroundColor"; "filenameForDownload": "filenameForDownload"; "ignoreKeyboard": "ignoreKeyboard"; "ignoreKeys": "ignoreKeys"; "acceptKeys": "acceptKeys"; "imageResourcesPath": "imageResourcesPath"; "localeFolderPath": "localeFolderPath"; "language": "language"; "listenToURL": "listenToURL"; "nameddest": "nameddest"; "password": "password"; "replaceBrowserPrint": "replaceBrowserPrint"; "showUnverifiedSignatures": "showUnverifiedSignatures"; "startTabindex": "startTabindex"; "showSidebarButton": "showSidebarButton"; "sidebarVisible": "sidebarVisible"; "activeSidebarView": "activeSidebarView"; "findbarVisible": "findbarVisible"; "propertiesDialogVisible": "propertiesDialogVisible"; "showFindButton": "showFindButton"; "showFindHighlightAll": "showFindHighlightAll"; "showFindMatchCase": "showFindMatchCase"; "showFindCurrentPageOnly": "showFindCurrentPageOnly"; "showFindPageRange": "showFindPageRange"; "showFindEntireWord": "showFindEntireWord"; "showFindEntirePhrase": "showFindEntirePhrase"; "showFindMatchDiacritics": "showFindMatchDiacritics"; "showFindFuzzySearch": "showFindFuzzySearch"; "showFindResultsCount": "showFindResultsCount"; "showFindMessages": "showFindMessages"; "showPagingButtons": "showPagingButtons"; "showZoomButtons": "showZoomButtons"; "showPresentationModeButton": "showPresentationModeButton"; "showOpenFileButton": "showOpenFileButton"; "showPrintButton": "showPrintButton"; "showDownloadButton": "showDownloadButton"; "theme": "theme"; "showToolbar": "showToolbar"; "showSecondaryToolbarButton": "showSecondaryToolbarButton"; "showSinglePageModeButton": "showSinglePageModeButton"; "showVerticalScrollButton": "showVerticalScrollButton"; "showHorizontalScrollButton": "showHorizontalScrollButton"; "showWrappedScrollButton": "showWrappedScrollButton"; "showInfiniteScrollButton": "showInfiniteScrollButton"; "showBookModeButton": "showBookModeButton"; "showRotateButton": "showRotateButton"; "handTool": "handTool"; "showHandToolButton": "showHandToolButton"; "showScrollingButton": "showScrollingButton"; "showSpreadButton": "showSpreadButton"; "showPropertiesButton": "showPropertiesButton"; "showBorders": "showBorders"; "spread": "spread"; "page": "page"; "pageLabel": "pageLabel"; "textLayer": "textLayer"; "zoom": "zoom"; "zoomLevels": "zoomLevels"; "maxZoom": "maxZoom"; "minZoom": "minZoom"; "mobileFriendlyZoom": "mobileFriendlyZoom"; }, { "formDataChange": "formDataChange"; "pageViewModeChange": "pageViewModeChange"; "progress": "progress"; "srcChange": "srcChange"; "scrollModeChange": "scrollModeChange"; "afterPrint": "afterPrint"; "beforePrint": "beforePrint"; "currentZoomFactor": "currentZoomFactor"; "rotationChange": "rotationChange"; "annotationLayerRendered": "annotationLayerRendered"; "annotationEditorLayerRendered": "annotationEditorLayerRendered"; "xfaLayerRendered": "xfaLayerRendered"; "outlineLoaded": "outlineLoaded"; "attachmentsloaded": "attachmentsloaded"; "layersloaded": "layersloaded"; "sidebarVisibleChange": "sidebarVisibleChange"; "activeSidebarViewChange": "activeSidebarViewChange"; "findbarVisibleChange": "findbarVisibleChange"; "propertiesDialogVisibleChange": "propertiesDialogVisibleChange"; "handToolChange": "handToolChange"; "spreadChange": "spreadChange"; "thumbnailDrawn": "thumbnailDrawn"; "pageChange": "pageChange"; "pageLabelChange": "pageLabelChange"; "pagesLoaded": "pagesLoaded"; "pageRender": "pageRender"; "pageRendered": "pageRendered"; "pdfDownloaded": "pdfDownloaded"; "pdfLoaded": "pdfLoaded"; "pdfLoadingStarts": "pdfLoadingStarts"; "pdfLoadingFailed": "pdfLoadingFailed"; "textLayerRendered": "textLayerRendered"; "annotationEditorModeChanged": "annotationEditorModeChanged"; "updateFindMatchesCount": "updateFindMatchesCount"; "updateFindState": "updateFindState"; "zoomChange": "zoomChange"; }, never, ["*", "*"]>;
 }

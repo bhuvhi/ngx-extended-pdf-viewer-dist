@@ -9,5 +9,5 @@ export declare class PdfSelectToolComponent {
     private onPdfJsInit;
     onClick(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<PdfSelectToolComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<PdfSelectToolComponent, "pdf-select-tool", never, { "showSelectToolButton": { "alias": "showSelectToolButton"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<PdfSelectToolComponent, "pdf-select-tool", never, { "showSelectToolButton": "showSelectToolButton"; }, {}, never, never>;
 }

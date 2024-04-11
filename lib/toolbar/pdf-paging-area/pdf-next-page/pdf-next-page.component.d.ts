@@ -10,5 +10,5 @@ export declare class PdfNextPageComponent {
     onPdfJsInit(): void;
     updateUIState(event: UpdateUIStateEvent): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<PdfNextPageComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<PdfNextPageComponent, "pdf-next-page", never, {}, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<PdfNextPageComponent, "pdf-next-page", never, {}, {}, never, never>;
 }

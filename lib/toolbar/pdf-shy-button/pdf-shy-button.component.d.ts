@@ -1,12 +1,11 @@
-import { AfterViewInit, ElementRef, OnChanges, OnInit, Renderer2 } from '@angular/core';
+import { OnChanges, OnInit } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { ResponsiveCSSClass } from '../../responsive-visibility';
 import { PdfShyButtonService } from './pdf-shy-button-service';
 import * as i0 from "@angular/core";
-export declare class PdfShyButtonComponent implements OnInit, OnChanges, AfterViewInit {
+export declare class PdfShyButtonComponent implements OnInit, OnChanges {
     private pdfShyButtonServiceService;
     private sanitizer;
-    private renderer;
     primaryToolbarId: string;
     secondaryMenuId: string;
     cssClass: ResponsiveCSSClass;
@@ -17,20 +16,17 @@ export declare class PdfShyButtonComponent implements OnInit, OnChanges, AfterVi
     toggled: boolean;
     disabled: boolean;
     order: number;
-    action: ((htmlEvent?: Event, isSecondaryMenue?: boolean) => void) | undefined;
+    action: (() => void) | undefined;
     closeOnClick: boolean;
     onlySecondaryMenu: boolean;
-    buttonRef: ElementRef;
     private _imageHtml;
     get imageHtml(): SafeHtml;
     set image(value: string);
-    constructor(pdfShyButtonServiceService: PdfShyButtonService, sanitizer: DomSanitizer, renderer: Renderer2);
-    ngAfterViewInit(): void;
+    constructor(pdfShyButtonServiceService: PdfShyButtonService, sanitizer: DomSanitizer);
     ngOnInit(): void;
     ngOnChanges(changes: any): void;
     private sanitizeHtml;
-    onClick(htmlEvent: Event): void;
-    updateButtonImage(): void;
+    onClick(event: Event): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<PdfShyButtonComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<PdfShyButtonComponent, "pdf-shy-button", never, { "primaryToolbarId": { "alias": "primaryToolbarId"; "required": false; }; "secondaryMenuId": { "alias": "secondaryMenuId"; "required": false; }; "cssClass": { "alias": "cssClass"; "required": false; }; "eventBusName": { "alias": "eventBusName"; "required": false; }; "l10nId": { "alias": "l10nId"; "required": false; }; "l10nLabel": { "alias": "l10nLabel"; "required": false; }; "title": { "alias": "title"; "required": false; }; "toggled": { "alias": "toggled"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "order": { "alias": "order"; "required": false; }; "action": { "alias": "action"; "required": false; }; "closeOnClick": { "alias": "closeOnClick"; "required": false; }; "onlySecondaryMenu": { "alias": "onlySecondaryMenu"; "required": false; }; "image": { "alias": "image"; "required": false; }; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<PdfShyButtonComponent, "pdf-shy-button", never, { "primaryToolbarId": "primaryToolbarId"; "secondaryMenuId": "secondaryMenuId"; "cssClass": "cssClass"; "eventBusName": "eventBusName"; "l10nId": "l10nId"; "l10nLabel": "l10nLabel"; "title": "title"; "toggled": "toggled"; "disabled": "disabled"; "order": "order"; "action": "action"; "closeOnClick": "closeOnClick"; "onlySecondaryMenu": "onlySecondaryMenu"; "image": "image"; }, {}, never, ["*"]>;
 }

@@ -10,5 +10,5 @@ export declare class PdfBookModeComponent {
     onClick: () => void;
     constructor();
     static ɵfac: i0.ɵɵFactoryDeclaration<PdfBookModeComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<PdfBookModeComponent, "pdf-book-mode", never, { "show": { "alias": "show"; "required": false; }; "pageViewMode": { "alias": "pageViewMode"; "required": false; }; "scrollMode": { "alias": "scrollMode"; "required": false; }; }, { "pageViewModeChange": "pageViewModeChange"; }, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<PdfBookModeComponent, "pdf-book-mode", never, { "show": "show"; "pageViewMode": "pageViewMode"; "scrollMode": "scrollMode"; }, { "pageViewModeChange": "pageViewModeChange"; }, never, never>;
 }
