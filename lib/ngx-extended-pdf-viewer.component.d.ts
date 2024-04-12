@@ -111,7 +111,7 @@ export declare class NgxExtendedPdfViewerComponent implements OnInit, AfterViewI
     primaryMenuVisible: boolean;
     /** option to increase (or reduce) print resolution. Default is 150 (dpi). Sensible values
      * are 300, 600, and 1200. Note the increase memory consumption, which may even result in a browser crash. */
-    printResolution: null;
+    printResolution: any;
     rotation: 0 | 90 | 180 | 270;
     rotationChange: EventEmitter<0 | 90 | 180 | 270>;
     annotationLayerRendered: EventEmitter<AnnotationLayerRenderedEvent>;
@@ -132,8 +132,8 @@ export declare class NgxExtendedPdfViewerComponent implements OnInit, AfterViewI
     private autoHeight;
     minHeight: string | undefined;
     private _height;
-    set height(h: string | undefined);
-    get height(): string | undefined;
+    set height(h: string);
+    get height(): string;
     private _useBrowserLocale;
     get useBrowserLocale(): boolean;
     /**
@@ -229,9 +229,9 @@ export declare class NgxExtendedPdfViewerComponent implements OnInit, AfterViewI
     private _page;
     get page(): number | undefined;
     set page(p: number | undefined);
-    pageChange: EventEmitter<number | undefined>;
+    pageChange: EventEmitter<number>;
     pageLabel: string | undefined;
-    pageLabelChange: EventEmitter<string | undefined>;
+    pageLabelChange: EventEmitter<string>;
     pagesLoaded: EventEmitter<PagesLoadedEvent>;
     pageRender: EventEmitter<PageRenderEvent>;
     pageRendered: EventEmitter<PageRenderedEvent>;
@@ -246,7 +246,7 @@ export declare class NgxExtendedPdfViewerComponent implements OnInit, AfterViewI
     updateFindState: EventEmitter<FindState>;
     /** Legal values: undefined, 'auto', 'page-actual', 'page-fit', 'page-width', or '50' (or any other percentage) */
     zoom: string | number | undefined;
-    zoomChange: EventEmitter<string | number | undefined>;
+    zoomChange: EventEmitter<string | number>;
     zoomLevels: (string | number)[];
     maxZoom: number;
     minZoom: number;
