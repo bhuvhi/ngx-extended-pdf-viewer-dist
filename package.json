@@ -4,7 +4,7 @@
   "version": "18.1.15",
   "license": "Apache-2.0",
   "repository": {
-    "url": "https://github.com/stephanrauh/ngx-extended-pdf-viewer"
+    "url": "git+https://github.com/bhuvhi/ngx-extended-pdf-viewer.git"
   },
   "schematics": "./schematics/collection.json",
   "ng-add": {
@@ -16,7 +16,7 @@
   },
   "homepage": "https://pdfviewer.net",
   "bugs": {
-    "url": "https://github.com/stephanrauh/ngx-extended-pdf-viewer/issues"
+    "url": "git+https://github.com/bhuvhi/ngx-extended-pdf-viewer/issues"
   },
   "keywords": [
     "PDF",
@@ -54,5 +54,8 @@
       "default": "./fesm2020/ngx-extended-pdf-viewer.mjs"
     }
   },
-  "sideEffects": false
+  "sideEffects": false,
+  "scripts": {
+    "prepublishOnly": "node --eval \"console.error('ERROR: Trying to publish a package that has been compiled by Ivy in full compilation mode. This is not allowed.\\nPlease delete and rebuild the package with Ivy partial compilation mode, before attempting to publish.\\n')\" && exit 1"
+  }
 }
