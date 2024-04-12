@@ -1,13 +1,13 @@
-import { __awaiter } from 'tslib';
 import * as i1 from '@angular/common';
-import { DOCUMENT, isPlatformBrowser, CommonModule } from '@angular/common';
+import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
 import * as i0 from '@angular/core';
-import { Component, EventEmitter, Injectable, Inject, Pipe, PLATFORM_ID, Input, ViewChild, Output, HostListener, ChangeDetectionStrategy, NgModule } from '@angular/core';
-import { Subject } from 'rxjs';
-import * as i2 from '@angular/platform-browser';
+import { ChangeDetectionStrategy, Component, EventEmitter, HostListener, Inject, Injectable, Input, NgModule, Output, PLATFORM_ID, Pipe, ViewChild } from '@angular/core';
 import * as i2$1 from '@angular/forms';
 import { FormsModule } from '@angular/forms';
+import * as i2 from '@angular/platform-browser';
+import { Subject } from 'rxjs';
 import { take } from 'rxjs/operators';
+import { __awaiter } from 'tslib';
 
 var FindState;
 (function (FindState) {
@@ -5362,6 +5362,7 @@ class NgxExtendedPdfViewerComponent {
         const assets = pdfDefaultOptions.assetsFolder;
         const versionSuffix = getVersionSuffix(assets);
         if (versionSuffix.startsWith('4')) {
+            //change .js to .mjs
             suffix = suffix.replace('.js', '.mjs');
         }
         const artifactPath = `/${artifact}-`;
