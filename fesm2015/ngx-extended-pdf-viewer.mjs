@@ -5358,9 +5358,12 @@ class NgxExtendedPdfViewerComponent {
         return script;
     }
     getPdfJsPath(artifact, needsES5) {
-        const suffix = this.minifiedJSLibraries ? '.min.mjs' : '.mjs';
+        let suffix = this.minifiedJSLibraries ? '.min.js' : '.js';
         const assets = pdfDefaultOptions.assetsFolder;
         const versionSuffix = getVersionSuffix(assets);
+        if (versionSuffix.startsWith('4')) {
+            suffix = suffix.replace('.js', '.mjs');
+        }
         const artifactPath = `/${artifact}-`;
         const es5 = needsES5 ? '-es5' : '';
         return assets + artifactPath + versionSuffix + es5 + suffix;
