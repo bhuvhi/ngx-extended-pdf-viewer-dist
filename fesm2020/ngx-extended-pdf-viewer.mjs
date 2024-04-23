@@ -431,8 +431,8 @@ var PdfCursorTools;
 const _isIE11 = typeof window === 'undefined' ? false : !!window.MSInputMethodContext && !!document.documentMode;
 const isEdge = typeof navigator === 'undefined' || /Edge\/\d./i.test(navigator.userAgent);
 const needsES5 = typeof ReadableStream === 'undefined' || typeof Promise['allSettled'] === 'undefined';
-const pdfjsVersion = '4.0.721';
-const pdfjsBleedingEdgeVersion = '4.1.0';
+const pdfjsVersion = '3.10.557';
+const pdfjsBleedingEdgeVersion = '3.11.4';
 function getVersionSuffix(folder) {
     if (folder?.includes('bleeding-edge')) {
         console.log("The bleeding edge version has been deleted in version 18.1.11.");

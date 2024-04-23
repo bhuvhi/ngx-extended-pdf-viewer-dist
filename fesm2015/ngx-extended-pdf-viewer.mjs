@@ -1,13 +1,13 @@
+import { __awaiter } from 'tslib';
 import * as i1 from '@angular/common';
-import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
+import { DOCUMENT, isPlatformBrowser, CommonModule } from '@angular/common';
 import * as i0 from '@angular/core';
-import { ChangeDetectionStrategy, Component, EventEmitter, HostListener, Inject, Injectable, Input, NgModule, Output, PLATFORM_ID, Pipe, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Injectable, Inject, Pipe, PLATFORM_ID, Input, ViewChild, Output, HostListener, ChangeDetectionStrategy, NgModule } from '@angular/core';
+import { Subject } from 'rxjs';
+import * as i2 from '@angular/platform-browser';
 import * as i2$1 from '@angular/forms';
 import { FormsModule } from '@angular/forms';
-import * as i2 from '@angular/platform-browser';
-import { Subject } from 'rxjs';
 import { take } from 'rxjs/operators';
-import { __awaiter } from 'tslib';
 
 var FindState;
 (function (FindState) {
@@ -27,8 +27,8 @@ var PdfCursorTools;
 const _isIE11 = typeof window === 'undefined' ? false : !!window.MSInputMethodContext && !!document.documentMode;
 const isEdge = typeof navigator === 'undefined' || /Edge\/\d./i.test(navigator.userAgent);
 const needsES5 = typeof ReadableStream === 'undefined' || typeof Promise['allSettled'] === 'undefined';
-const pdfjsVersion = '4.0.721';
-const pdfjsBleedingEdgeVersion = '4.1.0';
+const pdfjsVersion = '3.10.557';
+const pdfjsBleedingEdgeVersion = '3.11.4';
 function getVersionSuffix(folder) {
     if (folder === null || folder === void 0 ? void 0 : folder.includes('bleeding-edge')) {
         console.log("The bleeding edge version has been deleted in version 18.1.11.");
@@ -5362,7 +5362,6 @@ class NgxExtendedPdfViewerComponent {
         const assets = pdfDefaultOptions.assetsFolder;
         const versionSuffix = getVersionSuffix(assets);
         if (versionSuffix.startsWith('4')) {
-            //change .js to .mjs
             suffix = suffix.replace('.js', '.mjs');
         }
         const artifactPath = `/${artifact}-`;

@@ -1,5 +1,5 @@
-export declare const pdfjsVersion = "4.0.721";
-export declare const pdfjsBleedingEdgeVersion = "4.1.0";
+export declare const pdfjsVersion = "3.10.557";
+export declare const pdfjsBleedingEdgeVersion = "3.11.4";
 export declare function getVersionSuffix(folder: string): string;
 export declare function assetsUrl(url: string, postfixIfPathIsRelativ?: string): string;
 export declare let pdfDefaultOptions: {
